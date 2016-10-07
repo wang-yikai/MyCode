@@ -1,0 +1,290 @@
+9/28/16
+SoftDev:
+
+Aim: Requesting assistance
+
+request object
+	stores information about incoming requests.
+ex:
+from flask import Flask, render_template, request
+
+ex (from flasktest.py):
+print request.headers
+return render_template( "form.html" )
+
+prints:
+Referer: http://127.0.0.1:5000/
+Content-Length: 
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:48.0) Gecko/20100101 Firefox/48.0
+Connection: keep-alive
+Host: 127.0.0.1:5000
+Upgrade-Insecure-Requests: 1
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Content-Type: 
+Accept-Encoding: gzip, deflate
+
+HTML:
+<form action="/msg/">
+<textarea name = "message" rows = "6" cols= "40"></textarea>
+Python:
+@app.route( "/msg/" )
+def auth():
+    print request.headers
+    print request.args
+    print request.args["message"]
+    return "You good"
+
+
+9/29/16
+Systems:
+
+Aim: Make so
+
+Make
+	Create compiling instructions and setup dependencies
+	Standard name for the file is the makefile.
+
+	Syntax:
+		<target><dependencies>
+		TAB<rules>
+
+
+	strtest: stringy.c
+		 gcc stringy.c
+
+	clean:
+		rm *~
+
+
+	make clean would remove all emacs save files
+	(files with ~ at the end of filename).
+
+
+SoftDev:
+
+Aim: Dont forget to include POSTage
+DN: Open up yesterday's flask app
+
+request.headers
+	HTML headers sent from borwser
+request.method
+	the request method (GET/POST)
+request.args
+	the arguments in a query string from a GET request
+request.form
+	the arguments sent in a POST request
+request.args and request.form are immutable dictionaries.
+
+the u in the dictionary is unicode (string)
+
+9/30/16
+SoftDev:
+
+Aim: Always Serve Your Passwords With A Side of Hashbrowns
+
+Hash function
+     function designed to take in an arbitrary amount of data and return a fixed
+      size sequence of bits called a "hash digest" or simply, hash.
+
+      Hash digests are useful for storing certain kinds of sensitive information.
+
+Creating a had digest in python:
+	 hashlib
+		python module for generating has digests with different
+		algorithms
+
+		ex:
+			md5 (bad), sha1, sha224, sha256, sha384, and sha512 (spits more bytes)
+
+		ex:
+		import hashlib
+		hashlib.md5("12345")
+		hashlib.md5("12345").digest() -> returns as string as attempted
+		ASCII (looks messy w/ "\x")
+
+		hashlib.md5("12345").hexdigest() -> gives savable string as hex
+
+		hashlib.sha1("12345").hexdigest() -> longer
+		hashlib.sha512("12345").hexdigest() -> much longer hex values
+
+10/5/16
+Systems:
+
+Aim: If these files won't behave, we'll have to separate them!
+
+DN: Demo.
+
+crazy one line version of strlen:
+int len(char *s) {
+    return *s?1+len(*++s):0;
+}
+
+dw strcat:
+char * dwstrcat( char * s1, char *s2 ) {
+     char * p;
+     p = s1 + len( s1 );
+     dw strcpy(p);
+     }
+
+separate compilation:
+	 You can combine multiple c files into a c program by
+	 including them all in one gcc command.
+	     ex:
+		gcc test.c string.c foo.c woohoo.c
+	 
+	 You cannot have duplicate function or global variable names
+	 across these files.
+	 	ex: main()
+
+
+one solution: make file w/o main
+    ex: #include "dwstring.h"
+    	void main() { ... }
+
+
+	$gcc dwstrtest.c dwstring.c
+
+SoftDev:
+
+Aim: C is for Cookie, but Sessions are Secure
+
+DN: Demo.
+
+How to keep track who is logged in:
+
+Cookies are files that websites will save to your web browser 
+to store information on a local machine.
+
+Useful for keeping track of persistent information like login credentials.
+
+They have been around for a long time (not new).
+
+A session is a securely signed cookie. They are encryted and cannot be modified
+by the local machine.
+
+A session object works exactly like a dictionary:
+  add data to a session:
+  session[KEY] = DATA
+  	       ex: session['user'] = request.form('user')
+ 
+  remove data from a session:
+  session.pop(KEY)
+	ex: session.pop('user')
+
+  In order to encrypt session, need a private key in our app:
+     APP.secret_key = <RANDOM STRING>
+
+     		    get random data: os.urandom(32)
+		    returns 32 random bits of data as string.
+
+10/6/16
+Systems:
+
+Aim: malloc & free: The dynamic duo!
+
+     gcc -c dwstring.c main.c  = compile but not make it executable
+
+     -> dwstring.o main.o
+
+     gcc dwstring.o main.o
+
+     -> a.out
+
+
+.o files can be linked together with .c files through gcc
+
+gcc -o specify name of executable file
+
+gcc would try to make file executable, gives error if "main" is missing.
+
+
+void * malloc(int x)
+	   memory is not initialized (allocates x bytes of memory from the heap)
+	   generates generic pointer return, able to typecaste to appropriate
+	   pointer.
+
+free(void *ptr)
+     releases previously allocated memory. 
+
+void * calloc(int n, int x)
+     allocates n * x bytes of memory
+     ensures each bit = 0
+     generates generic pointer return, able to typecaste to appropriate pointer.
+
+void * realloc(void *ptr, int x)
+     takes a pointer and changes the amount of memory allocated to given block
+
+     ptr must be a pointer to the beginning of an allocated block of memory, but it does not have to be the original pointer.
+
+
+SoftDev:
+
+Aim: Url binding is the art of redirection
+
+     app.secret_key = os.urandom(32)
+     that could log out all of the users when app is restarted.
+
+     ex:
+     print url_for( "login" ) 
+     uses associated function to build correct url
+     
+     redirect
+     Flask fxn that will redirect a call to one route to a different response
+     used in combination with url_for
+     	  ex:
+		redirect( url_for('login') )
+
+10/7/16
+
+Aim: Structural Programing
+
+void *
+     the dynamic memory functions deal in arbitrary blocks of memory.
+     There is no regular type associated with the block.
+
+     void * is considered to be a pointer to a 1 byte block of memory,
+     so pointer arithmetic will be based on 1.
+
+ex:
+  int *p;
+  p = malloc( 5 * sizeof(int) ); //same as calloc( 5, sizeof(int) )
+
+  p[0] = 2;
+  printf( "p[0]: %d\n", 0[p] );
+
+ex:
+  int *ip;
+  ip = (int*)malloc( 20 * sizeof(int) );
+
+
+Struct
+	A collection of values in a single data type
+	struct { int a; char x; } s; sizeof(s) -> 8 (does units of 8 bytes)
+	|-----------------------|
+	  s is a type that has an int and char
+
+	  here, s is a variable of type struct { int a; char x; }
+
+
+	struct foo { int a; char x; };
+	       in this example, foo is a prototype for this kind of struct
+	       to be used later.
+
+	struct foo s;
+	we use the . oparator to access values in a struct:
+	   ex:
+		s.a
+
+	We use the . operator to access a value iside a struct
+	   s.a = 10;
+	   s.x = '@';
+
+	   . binds before *
+	     to access data from a struct pointer you can either:
+	     	struct foo *p;
+		p = &s;
+		(*p).x;
+			or...
+		p->x;
