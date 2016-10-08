@@ -23,4 +23,5 @@ void main() {
   struct foo { int i; char c3; };
   struct foo *s = (struct foo *)malloc(sizeof(struct foo));
   (*s).i = 764;
+  printf( "s->i: %d\n", s->i );
 }
