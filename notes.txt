@@ -329,5 +329,4 @@ gdb (GNU Debugger)
     ex: gdb a.out
 
     quit = quit gdb
-
     list = lines of code around error
