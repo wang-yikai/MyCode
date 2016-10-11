@@ -237,6 +237,7 @@ Aim: Url binding is the art of redirection
 		redirect( url_for('login') )
 
 10/7/16
+Systems:
 
 Aim: Structural Programing
 
@@ -288,3 +289,31 @@ Struct
 		(*p).x;
 			or...
 		p->x;
+
+10/11/16
+Systems:
+
+Aim: Get Dem Bugs
+
+What is wrong with this fxn?
+struct node * insert_front( struct node * n, int i ) {
+       struct node new;
+
+       new.i = i;
+       new.next = n;
+
+       return &new;
+
+}
+The fxn is reasonably okay, but it is stack memory (new and its variables will be popped).
+The only time memory is allocated dynamically is by using malloc, calloc, ect.
+
+Typedef
+	provide a new name for an existing data type
+	typedef <real type> <new name>;
+
+	ex:
+		typedef unsigned long size_t;
+		size_t x = 139; //really an unsigned long
+
+
