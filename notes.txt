@@ -316,4 +316,18 @@ Typedef
 		typedef unsigned long size_t;
 		size_t x = 139; //really an unsigned long
 
+		typeof short[10] list;
+		list a;
+		typeof char * String;
 
+		typedef struct foo { int a; char x; } bar;
+
+
+gdb (GNU Debugger)
+    allows you to get detailed information about a program while it is running.
+
+    ex: gdb a.out
+
+    quit = quit gdb
+
+    list = lines of code around error
