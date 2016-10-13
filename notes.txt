@@ -330,3 +330,105 @@ gdb (GNU Debugger)
 
     quit = quit gdb
     list = lines of code around error
+
+    ex: break 10 = set a breakpoint at line 10
+
+    print <VAR> = prints a variable
+
+    backtrace = show the currect stack
+
+
+valgrind
+	debugging tools specializing in memory values.
+	
+	
+	valgrind --leak-check=yes ./a.out
+		 checks memory leaks
+
+
+9/13/16
+Softdev:
+
+Aim: All your data are belong to us.
+
+Relational database
+	   Database that stores information as a collection of tables.
+
+	   Field: column data in a RDB
+	   Record: row in a RDB
+	   Data can be linked between tables based on field values.
+
+ex:
+Students
+name:	| id:
+-------------------
+amy	| 0
+reo	| 1
+emma	| 3
+
+
+Class
+name:	| student id:	| grade
+------------------------------------
+softdev	| 0		| 100
+softdev	| 1		| 100
+
+
+the id is related to the id in the students table
+
+
+SQL (Structured Query Language)
+    Standard language designed to work with relational databases.
+    
+    Is used for many major db programs, though the implementations may not
+    (mostly are not) compatible.
+
+    MySQL, PostgreSQL, SQLite, Oracle are different SQL implementations.
+
+SQLite
+	SQL implementation that relies entirely on functions calls in the parent 
+	program. There is no database server.
+
+	All database information is stored in a single file.
+
+	Data is dymanically typed as values are inserted into a table.
+
+Basic SQLite Operations
+      CREATE TABLE
+      	     Add a table to a database
+	     CREATE TABLE <name> (<column name> <data type>, ... )
+	     	    The data type will help to convert entered values to a 
+		    suggested type.
+
+		    TEXT, INTEGER, REAL, NUMERIC, BLOB
+		    	  NUMERIC will default to an integer, but can be a float.
+			  
+			  BLOB means no suggested type.
+
+ex:
+	$ sqlite3 school.db
+	...>CREATE TABLE students (name TEXT,...);
+	.tables = show the tables
+	INSERT INTO students VALUES ("amy", 0);
+	INSERT INTO classes VALUES ("softdev", 0, NULL ); 
+
+
+	Columns can be given a PRIMARY KEY attribute.
+	denoting that every entry in that column is unique and cannot be NULL
+
+	Columns can be given NOT NULL attribute, denoting that no entry can be NULL.
+	INSET INTO
+	      Insert a record into a table
+	      INSERT INTO <name> VALUES ( <field 1>, <field 2> ... )
+	      	     Will add a record to a table matching the values to the columns in order.
+	
+	NULL can be used in any entry.
+
+	SELECT * FROM <name>; = select everything from a table
+
+SQLITE Shell commands
+       .quit
+       .tables
+       .header on|off
+       .mode column|csv|list|html|insert|line|tabs
+
