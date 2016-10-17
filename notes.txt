@@ -489,5 +489,6 @@ SQL SELECT Statement
 	   ex:
 		SELECT name FROM students;
 		SELECT * FROM students; -> gives everything from students
-
-
+		SELECT name, id, code FROM students, courses; -> needs to specify
+		    solution:  ->  students.id
+		
