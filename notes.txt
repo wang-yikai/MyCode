@@ -438,21 +438,21 @@ SoftDev:
 Aim: sqlite, the low-fat alternative to SQL
 
 python sqlite module
-       import sqlite3
+        import sqlite3
 
-       connect
+        connect
 		open/create an sqlite database.
 		
     		If the database does not exists, create it.
 		   db = sqlite3.connect(<db name>).
 
-       cursor
+        cursor
 		Create a database cursor object that will allow you to perform
 		operations of the databse.
 
 		c = db.cursor()
 
-       execute
+        execute
 		cursor method to perform the provided SQL operation, given as a
 		string.
 		
@@ -464,3 +464,18 @@ python sqlite module
 		db.commit()
 
 	db.close()
+
+
+	formatting strings in python:
+		   '(' + x + ', ' + y + ') is a point'
+		       =
+		   '(%d, %d) is a point'%(x, y)
+
+
+		   %d = decimal integer
+		   %f = floating point
+		   %s = string
+
+	ex:
+	command = 'INSERT INTO students VALUES ("%s", %d, %d'%(students['name'], ...
+
