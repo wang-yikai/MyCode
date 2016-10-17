@@ -432,3 +432,35 @@ SQLITE Shell commands
        .header on|off
        .mode column|csv|list|html|insert|line|tabs
 
+10/17/16
+SoftDev:
+
+Aim: sqlite, the low-fat alternative to SQL
+
+python sqlite module
+       import sqlite3
+
+       connect
+		open/create an sqlite database.
+		
+    		If the database does not exists, create it.
+		   db = sqlite3.connect(<db name>).
+
+       cursor
+		Create a database cursor object that will allow you to perform
+		operations of the databse.
+
+		c = db.cursor()
+
+       execute
+		cursor method to perform the provided SQL operation, given as a
+		string.
+		
+		c.execute( <SQL statement> )
+
+	commit
+		database method to save changes to the db
+
+		db.commit()
+
+	db.close()
