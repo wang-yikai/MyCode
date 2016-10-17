@@ -479,3 +479,15 @@ python sqlite module
 	ex:
 	command = 'INSERT INTO students VALUES ("%s", %d, %d'%(students['name'], ...
 
+SQL SELECT Statement
+    Used to get data from a database
+    Creates a results table based on the query
+    SELECT <column 1>, ... FROM <table 1>, ...;
+    	   Will return a new table containing only the requested columns from the requested 
+	   tables.
+
+	   ex:
+		SELECT name FROM students;
+		SELECT * FROM students; -> gives everything from students
+
+
