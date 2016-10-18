@@ -516,4 +516,19 @@ ex:
 
 		ex:
 			#define TRUE 1
+				TRUE is not a variable, and doesn't get replaced in a string.
+
+		macros:
+			#define SQUARE(x) x*x (not a fxn)
+			...
+			int y = SQUARE(9); -> int y = 9 * 9;
+			    DOESN'T COMPUTE 9*9!!
+
+		conditional statement:
+		#ifndef (if not defined) <IDENTIFIER>
+		<CODE: deal with whatever is in here>
+		#endif
+
+		if the identifier has to be defined ignore all the code up until the
+		endif statement.
 
