@@ -552,3 +552,39 @@ SoftDev:
 
 Aim: WHERE did I put that data?
 
+WHERE
+	allows you to put restirctions on the results of a SELECT statement.
+	
+	ex:
+		SELECT * FROM courses WHERE mark < 65;
+
+		can use single = sign for equality test
+
+	ex:
+
+		select name, students.id, courses.id, code, mark from students, courses where students.id = courses.id;
+		name        id          id          code        mark      
+		----------  ----------  ----------  ----------  ----------
+		kruder      1           1           ceramics    99        
+		kruder      1           1           softdev     65        
+		kruder      1           1           systems     75        
+		dorfmeiste  2           2           ceramics    98        
+		dorfmeiste  2           2           softdev     75        
+		dorfmeiste  2           2           systems     65        
+		sasha       3           3           greatbooks  85        
+		sasha       3           3           systems     55        
+		digweed     4           4           greatbooks  65        
+		digweed     4           4           softdev     75        
+		tiesto      5           5           greatbooks  55        
+		bassnectar  6           6           ceramics    90        
+		bassnectar  6           6           softdev     99        
+		bassnectar  6           6           systems     90        
+		TOKiMONSTA  7           7           greatbooks  70        
+		TOKiMONSTA  7           7           softdev     85        
+		TOKiMONSTA  7           7           systems     88        
+		jphlip      8           8           systems     98        
+		tINI        9           9           softdev     55        
+		alison      10          10          softdev     80        
+		alison      10          10          systems     85
+
+
