@@ -548,3 +548,7 @@ ex:
 			   (linux has a "file" that generates random values)
 		rand() = random number generator
 
+SoftDev:
+
+Aim: WHERE did I put that data?
+
