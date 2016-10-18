@@ -492,3 +492,8 @@ SQL SELECT Statement
 		SELECT name, id, code FROM students, courses; -> needs to specify
 		    solution:  ->  students.id
 		
+10/18/16
+Systems:
+
+Aim: C, the ultimate hipster, using # decades before it was cool
+
