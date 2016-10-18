@@ -532,3 +532,19 @@ ex:
 		if the identifier has to be defined ignore all the code up until the
 		endif statement.
 
+		ex:
+			#ifndef LINK_LIST_H
+			#define LINK_LIST_H
+			...
+
+		also:
+			#define FOO 5
+			a[FOO] would be fine since FOO would be replaced.
+
+	rand(), srand(int), sranddev()
+		srand(int) = sets a seed, can be used as srand( time(t sec since epoch) )
+			   time(NULL) needs #include <time.h>
+		sranddev() = seed rand() with random number
+			   (linux has a "file" that generates random values)
+		rand() = random number generator
+
