@@ -511,3 +511,9 @@ ex:
 	#include <library> or "LIBRARY"
 		 link libraries to your code.
 
+	#define <NAME> <VALUE>
+		"find and replace" all occurances of NAME with VALUE
+
+		ex:
+			#define TRUE 1
+
