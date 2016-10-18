@@ -497,3 +497,17 @@ Systems:
 
 Aim: C, the ultimate hipster, using # decades before it was cool
 
+ex:
+	#include "link_list.h"
+	->if you include 2 .h files, where one .h file includes another .h file,
+	the .h file would be included twice. That is problematic.
+
+#
+	used to provide preprocessor instructions
+	these directives are handled before the compler really kicks in.
+	NOT regular c syntax
+	gcc basically goes and copies content of the header file to where "include" is
+
+	#include <library> or "LIBRARY"
+		 link libraries to your code.
+
