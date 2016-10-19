@@ -580,5 +580,31 @@ WHERE
 		alison      10          10          softdev     80
 
   
+10/19/16
+Systems:
+
+Aim: A bit of operators
+
+>> and << are binary operators.
+
+int i = 30;
+i = i>>2;
+    i -> 8 (shifted values 2 bits to the "right", and added 2 0s in the front)
+i = i<<2;
+    i -> 28 (NOT 30)
+
+~ negation
+  flips every bit
+
+  ex:
+	00001 -> 11110
+
+| or, & and
+  ex:
+	a | b
+    
+    perform or/and for each pair of bits in (a, b)
+
+
 
 
