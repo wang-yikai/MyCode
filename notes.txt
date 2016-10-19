@@ -601,10 +601,16 @@ i = i<<2;
 
 | or, & and
   ex:
-	a | b
+	a | b -> 10010 | 01010 -> 11010
+	a & b -> 10010 & 01010 -> 00010
     
     perform or/and for each pair of bits in (a, b)
 
+^ xor
+  ex:
+	a ^ b
+
+	perform xor for each pair of bits in (a, b)
 
 
 
