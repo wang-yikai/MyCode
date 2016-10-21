@@ -641,3 +641,7 @@ File permissions:
      	  A list of all the files that is used by a program while it is running.
 	  Contains basic info such as location and size.
 
+	  has a limited size, which is a power of 2 and commonly 256 files (not bytes), and
+	  getdtablesize() will return this size.
+
+	  
