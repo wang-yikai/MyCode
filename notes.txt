@@ -693,3 +693,14 @@ open - <fcntl.h>
 			 O_EXCL: (exclusive) only works when combined with O_CREAT, will return error if file exist
 
 		
+Each flag is a number, to combine flags we use bitwise or
+     O_WRONLY = 1
+     O_APPEND = 8
+     O_WRONGLY | O_APPEND = 00001001
+
+
+close - <unistd.h>
+      remove a file from the file table (0 if successful)
+
+      close( <FILE DESCRIPTION> );
+
