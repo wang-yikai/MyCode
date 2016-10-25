@@ -704,3 +704,51 @@ close - <unistd.h>
 
       close( <FILE DESCRIPTION> );
 
+10/24/16
+Systems:
+
+Aim:
+
+umask - <sys/stat.h>
+      set the file creation perission mask
+      By default, created files are not given the exact permissions provided in the mode argument to open. Some permissions are automatically shut off. (ex: 0666 != rw-r--r--)
+
+      Umask is applied by using bitwise negation on the mask, then bitwise and and-ing it to the mode
+      new_permissions = ~umask & mode
+
+      default umask = 0022.
+
+
+So here, we get:
+   umask:  000 010 010
+
+   ~umask: 111 101 101
+   & mode: 110 110 110
+   -------------------
+   result: 110 100 100
+
+umask( <MASK> )
+       ex: umask( 0000 ); -> everything is on
+       	   umask( 0111 ); -> no execute permission
+
+Read = take data from storage and dump into memory
+read - <unistd.h>
+     read( <file descriptor>, <buffer>, <amount> )
+     read( fd, buff, n )
+
+     same errno stuff ( -1, ect. ) as open
+     read n bytes from the fd's file and put that data into buff
+
+     returns the number of bytes actually read (if successful).
+     buffer must be a pointer (doesn't naturally have to be a string).
+     	    	 -can read integers if the file has actual numbers
+
+
+write - <unistd.h>
+      "twin" of read
+      write n bytes from buff into fd's file
+
+      returns the number of bytes actually written. Same errno stuff as open/read.
+      buffer must be a pointer.
+
+
