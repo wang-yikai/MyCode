@@ -764,5 +764,8 @@ lseek - <unistd.h>
       Set the current position in an open file
       lseek( <FILE DESCRIPTOR>, <OFFSET>, <WHENCE> )
 
-
+      offset = # of bytes (can be negative)
+      whence = where to measure offset from
+      	     SEEK_SET
+		offset is evaluated from the beginning of the file
 
