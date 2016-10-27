@@ -775,3 +775,5 @@ lseek - <unistd.h>
 	     SEEK_END
 		offset is evaluated from the end of the file
 
+	returns the # of bytes the current position is from the beginning of the file
+
