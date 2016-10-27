@@ -752,3 +752,17 @@ write - <unistd.h>
       buffer must be a pointer.
 
 
+10/27/16
+Systems:
+
+Aim: Seek and ye shall find
+
+-write raw byte data into txt file
+       reads the int one byte at a time and attempts to read it as ASCII
+
+lseek - <unistd.h>
+      Set the current position in an open file
+      lseek( <FILE DESCRIPTOR>, <OFFSET>, <WHENCE> )
+
+
+
