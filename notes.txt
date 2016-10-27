@@ -777,3 +777,14 @@ lseek - <unistd.h>
 
 	returns the # of bytes the current position is from the beginning of the file
 
+ex:
+	int b = write(fd, r, sizeof(r) );
+
+	lseek( fd, 0, SEEK_SET )
+	int x;
+	read( fd, &x, sizeof(int) );
+	printf( "x: %d\n", x );
+	printf( "b: %d\n", b );
+
+
+	
