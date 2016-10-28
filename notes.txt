@@ -789,7 +789,14 @@ ex:
 
 	
 10/28/16
+Systems:
+
+octal permission: ex: 100644
+      1 is a regular file, 4 is a directory
+
+
 Softdev:
 
+Stuff we can add:
 being_edited = boolean when user in middle of editing story
 
