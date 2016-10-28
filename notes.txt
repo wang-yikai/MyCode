@@ -788,3 +788,8 @@ ex:
 
 
 	
+10/28/16
+Softdev:
+
+being_edited = boolean when user in middle of editing story
+
