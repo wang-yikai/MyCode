@@ -800,3 +800,8 @@ Softdev:
 Stuff we can add:
 being_edited = boolean when user in middle of editing story
 
+11/1/16
+Systems:
+
+Aim: Where fo compsci priests live? - In directory!
+
