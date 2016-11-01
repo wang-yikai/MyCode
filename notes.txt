@@ -854,3 +854,17 @@ readdir - <dirent.h>
 	struct dirent - <sys/types.h>
 	       Directory struct that contains the information stored in a directory.
 
+SoftDev:
+
+Aim: Extending your template knowledge.
+
+Extending HTML templates
+	  any template can be inherited by others
+	  To extend a template: {% extends "<TEMPLATE>" %}
+
+	  You can define sections to override inside.
+	  ex: (content is a name)
+
+	  {% block content %}
+
+	  {% endblock %}
