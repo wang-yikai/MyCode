@@ -805,3 +805,28 @@ Systems:
 
 Aim: Where fo compsci priests live? - In directory!
 
+sprintf:
+	print formated string into a string.
+
+calloc guarantees terminanting null.
+
+convert octal to string rwx:
+
+perms[0] = (mode & 0b11000000) >> 6;
+perms[1] = (mode & 0b111000) >> 3;
+perms[2] = (mode & 0b111);
+
+or:
+110 100 100
+
+if( mode & 256 )
+    perm_string[0] = 'r';
+
+
+Directories:
+	A *nix directory is a file containing the names of the files within the 
+directory along with basic information like file type.
+
+	Moving files into/out of a directory means changing the directory file. 
+not actually moving any data.
+
