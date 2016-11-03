@@ -917,4 +917,8 @@ Command Line Arguments:
 		array of command line arguments
 
 
-	
+	ex:
+	while( argc ) {
+	       argc--;
+	       printf( "%d: %s\n", argc, argv[argc] );
+	}	
