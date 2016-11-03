@@ -893,4 +893,28 @@ getcwd - <unistd.h>
        getcwd(path, 99);
        printf( "current directory: %s\n", path ); -> gets absolute path
 
+chdir - <unistd.h>
+      change the working directory of a program
 
+      chdir( <PATH> )
+      	     returns 0 if successful, -1 (errmo) if not
+	     keep track of file paths when using chdir!
+      
+      chdir( ".." );
+      getcwd(path, 99);
+      printf( "current directory: %s\n", path ); -> now prints parent directory
+
+
+Command Line Arguments:
+
+	int main( int argc, char *argv[] )
+	program name is considered the first command line argument
+
+	argc
+		number of command line arguments
+
+	argv
+		array of command line arguments
+
+
+	
