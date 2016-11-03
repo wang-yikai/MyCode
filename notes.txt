@@ -868,3 +868,6 @@ Extending HTML templates
 	  {% block content %}
 
 	  {% endblock %}
+	  
+Note about directories (Systems):
+	// . refers to directory itself and .. refers to the parent directory
