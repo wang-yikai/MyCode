@@ -871,3 +871,26 @@ Extending HTML templates
 	  
 Note about directories (Systems):
 	// . refers to directory itself and .. refers to the parent directory
+
+
+11/3/16
+Systems:
+
+Aim: Input? fgets about it!
+
+stat provides metadata (doesnt open file)
+
+getcwd - <unistd.h>
+       get the current working directory (cwd) of a program
+
+       getcwd( <STRING BUFFER>, <SIZE> )
+       	       copies the path to the cwd into the buffer argument (char * )
+	       copies at most SIZE characters of the path
+
+       ex:
+       char path[100];
+       path[99] = 0;
+       getcwd(path, 99);
+       printf( "current directory: %s\n", path ); -> gets absolute path
+
+
