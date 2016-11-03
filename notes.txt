@@ -922,3 +922,12 @@ Command Line Arguments:
 	       argc--;
 	       printf( "%d: %s\n", argc, argv[argc] );
 	}	
+
+scanf - <stdio.h>
+	scanf( <FORMAT STRING>, <VAR 1>, <VAR 2>, ... );
+	
+	ex:
+	int i; float f;
+	scanf( "%d-%f", &i, &f );
+
+
