@@ -931,3 +931,31 @@ scanf - <stdio.h>
 	scanf( "%d-%f", &i, &f );
 
 
+11/4/16
+Systems:
+
+Aim: Sending mixed signals
+
+fgets - <stdio.h>
+    Read in from a file stream and store it in a string
+    fgets(<DESTINATION>, <BYTES>,< FILE POINTER>)
+
+    File pointer
+        FILE * type, more complex than a file descriptor
+        stdin is a FILE * variable
+
+    Stops at newline, EOF, or the byte limit.
+    If applicable, keeps the newline character as part of the string, appends NULL after
+
+Signals
+    Limited way of sending information to a process.
+    kill
+        Command line utility to send a signal to a process
+        $ kill <PID>
+            Sends signal 15 (SIGTERM) to PID
+	    
+the command "ps" shows a list of running processes that were run from a terminal
+	"ps -ax" shows ALL processes
+	
+PID is process id
+All process information can be found in /proc/<PID>
