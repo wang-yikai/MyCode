@@ -1006,4 +1006,13 @@ Signal handling in c programs <signal.h>
 	kill(<PID>, <SIGNAL>)
 		    returns 0 on success or -1 (errno) on failure.
 
+Sighandler
+	To intercept signals in a c program you must create a signal handling 
+	function.
 
+	Some signals (like SIGKILL) cannot be caught.
+	
+	static void sighandler( int signo )
+		Must be static, muct be void, must take a single int parameter.
+		static: the function can only be called from within the file it
+		is defined.
