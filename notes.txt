@@ -959,3 +959,26 @@ the command "ps" shows a list of running processes that were run from a terminal
 	
 PID is process id
 All process information can be found in /proc/<PID>
+
+11/7/16
+Systems:
+
+Aim: Are your processes running? - Then you should go out and catch them!
+
+
+Processes
+	Every running program is a process. A process can create subprocesses, 
+	but these are no different from regular processes.
+
+	A processor can handle 1 process per cycle (per core). "Multitasking" 
+	appears to happen because the processor switches between all the active
+	processes quickly.
+
+pid
+	Every process has a unique identifie called the pid.
+	pid 1 is the init process
+	each entry in the /proc directory is a current pid.
+
+getpid() - <unistd.h>
+	 returns current process' pid
+
