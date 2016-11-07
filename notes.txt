@@ -982,3 +982,6 @@ pid
 getpid() - <unistd.h>
 	 returns current process' pid
 
+getppid() - <unistd.h>
+	 returns current process' parent pid
+
