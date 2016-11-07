@@ -985,3 +985,25 @@ getpid() - <unistd.h>
 getppid() - <unistd.h>
 	 returns current process' parent pid
 
+Signals
+	Limited way of sending information to a process.
+
+	kill
+		command line utility to send a signal to a process
+		
+		$kill <PID>
+		      sends signal 15 (SIGTERM) to PID
+
+		$kill -9 <PID> will give a different signal
+		      (Killed: 9 is different from the default Terminated: 15)
+
+		killall [-<SIGNAL>] <PROCESS>
+			sends sigterm (or signal if provided) to all processes 
+			with process as the name
+
+Signal handling in c programs <signal.h>
+       kill
+	kill(<PID>, <SIGNAL>)
+		    returns 0 on success or -1 (errno) on failure.
+
+
