@@ -1020,3 +1020,4 @@ Sighandler
 	in main attatch:
 	   signal( SIGINT, sighandler );
 
+sleep(1); wait 1 second before "spamming"
