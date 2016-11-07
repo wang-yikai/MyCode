@@ -1016,3 +1016,7 @@ Sighandler
 		Must be static, muct be void, must take a single int parameter.
 		static: the function can only be called from within the file it
 		is defined.
+
+	in main attatch:
+	   signal( SIGINT, sighandler );
+
