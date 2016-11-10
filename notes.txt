@@ -1050,5 +1050,12 @@ fork() - <unistd.h>
        If a parent process ends before the child, the child's new parent pid is 1.
 
 
-       
-       
+       ex:
+       int f;
+       printf(pid)
+       f = fork();
+       printf(pid) -> now run by 2 processes (parent does not always execute 1st (more like
+       child finishes, then parent comes back))
+       if the parent finishes its function, and the child has not, the ppid would print 1.
+
+
