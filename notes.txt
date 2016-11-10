@@ -1021,3 +1021,25 @@ Sighandler
 	   signal( SIGINT, sighandler );
 
 sleep(1); wait 1 second before "spamming"
+
+
+11/10/16
+Systems:
+
+Aim: What the fork?
+
+fork: "forks" a new process (make a sub (new) process)
+(ex: bash: command -> subprocess ->bash)
+
+The child process runs on its own. They don't share information and 
+can have some intercations (signals).
+
+
+fork() - <unistd.h>
+       Creates a separate process based on the current one, the new process is 
+       called the child, the original is the parent.
+
+       The child process is a duplicate of the parent process. All parts of the 
+       parent process are copied, including stack and heap memory, and 
+       the file table.
+
