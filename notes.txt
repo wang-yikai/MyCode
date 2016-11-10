@@ -1058,4 +1058,6 @@ fork() - <unistd.h>
        child finishes, then parent comes back))
        if the parent finishes its function, and the child has not, the ppid would print 1.
 
+       look at return value of fork to assign different tasks.
+
 
