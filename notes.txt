@@ -1043,3 +1043,12 @@ fork() - <unistd.h>
        parent process are copied, including stack and heap memory, and 
        the file table.
 
+       Returns 0 to the child and the child's pid to the parent or -1 (errno).
+       (the child gets a return value (0) from fork and the parent will get the 
+       pid of the child or -1 (if fails-no child).)
+
+       If a parent process ends before the child, the child's new parent pid is 1.
+
+
+       
+       
