@@ -1110,3 +1110,27 @@ else {
 }
 
 
+Softdev:
+
+Aim: Stuylin'
+
+CSS - Cascading Style Sheets
+
+    Created to separate the presentation of an html/xml page and its content
+
+    Basic syntax:
+
+    	  PROPERTY: VALUE;
+
+	  ex:
+		color: lightsteelblue;
+
+
+	  There are 3 ways to incorporate css into a page;
+	  inline, style sheet, external style sheet.
+
+	  inline: least useful
+	  <TAG style="CSS CODE">
+
+	  ex:
+	  <p style="color: green; font-size: 2em;">...</p>
