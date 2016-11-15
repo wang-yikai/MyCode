@@ -1061,3 +1061,52 @@ fork() - <unistd.h>
        look at return value of fork to assign different tasks.
 
 
+11/15/16
+Systems:
+
+Aim: Wait for it...
+
+f = fork();
+if( f == 0 )
+    printf("I'm a child: %d, parent: %d\n", getpid(), getppid());
+else
+    printf("I'm a parent! f = %d\n", f);
+
+printf( "almost done!\n" );
+
+
+But what about threads you ask?
+    A quick note on threads: A thread is a separate executable entity similar
+    to a child process, except a thread is not a standalone process.
+
+    It does not have its own memory space, instead it shares its parent's 
+    memory. But shares info more quickly.
+
+
+to make child run before parent, we can fake it:
+   use: sleep(1);
+
+   better:
+	wait - <unistd.h>
+	
+		Stops a parent process from running until any child has provided
+		status information to the parent via a signal.
+		(usually the child has exited)
+
+		returns the pid of the child that exited, or -1 (errno)
+
+		wait( int *status )
+		      The parameter (status) is used to store information about
+		      how the process exited.
+
+ex:
+else {
+     int status, r;
+
+     r = wait( &status );
+     printf("I'm a parent! f = %d\n", f);
+     printf("wait returned: %d  status: %d\n", r, status);
+     printf("WEXITSTATUS: %d\n", WEXITSTATUS(status) );
+}
+
+
