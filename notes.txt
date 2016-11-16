@@ -1160,8 +1160,12 @@ execvp:
 
 Both:
 	<unistd.h>
+
 	run executables and REPLACE CURRENT PROCESS.
+	takes over process including pid
+
 	returns -1 and set errno only if theres an error.
+
 
 ex:
   char* file = "ls";
