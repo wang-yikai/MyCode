@@ -1152,7 +1152,8 @@ execvp:
 	
 	run executables by filename and argv is an array of null-terminated 
 	strings to provide a value of the argv in the main function of the 
-	executable file. (appropriate arguments to the file).
+	executable file. 
+	(appropriate arguments to the file/command line arguments).
 
 	if no slash exists in filename, will look through the PATH environment 
 	variable.
