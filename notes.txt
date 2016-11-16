@@ -1134,3 +1134,46 @@ CSS - Cascading Style Sheets
 
 	  ex:
 	  <p style="color: green; font-size: 2em;">...</p>
+
+11/16/16
+Systems:
+
+Aim: Time to make an executive decision.
+
+execlp:
+	takes command line args as strings.
+
+	int execlp( const char *filename, const char *arg, ... )
+
+execvp:
+	takes command line args as an array.
+
+	int execvp( const char *filename, char *const argv[] )
+	
+	run executables by filename and argv is an array of null-terminated 
+	strings to provide a value of the argv in the main function of the 
+	executable file. (appropriate arguments to the file).
+
+	if no slash exists in filename, will look through the PATH environment 
+	variable.
+
+Both:
+	<unistd.h>
+	run executables and REPLACE CURRENT PROCESS.
+	returns -1 and set errno only if theres an error.
+
+ex:
+  char* file = "ls";
+  char * arg[3]; //command line arguments
+  arg[0] = "ls";
+  arg[1] = "-al";
+  arg[2] = NULL;
+
+  int i = execvp( file, arg );
+  printf( "Return: %d - error: %s\n", i, strerror(errno) );
+
+
+ex:
+  execlp( "ls", "ls", "-l", NULL );
+
+
