@@ -1182,3 +1182,11 @@ ex:
   execlp( "ls", "ls", "-l", NULL );
 
 
+SoftDev:
+
+Anything in the <head> loads first.
+
+External Style Sheet:
+in <head>:
+   <link rel="stylesheet" type="text/css" href="STYLE FILE">
+
