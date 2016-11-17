@@ -1190,3 +1190,48 @@ External Style Sheet:
 in <head>:
    <link rel="stylesheet" type="text/css" href="STYLE FILE">
 
+
+11/17/16
+Systems:
+
+Aim: Let's take this to delimit!
+
+specify path with execl
+execl( "/bin/ls", "ls", "-l", NULL );
+
+char * command[3]; - > array of pointers, but is NOT a null terminated string
+     *the 3 pointers are going to assigned to immutable strings*
+
+ex:
+
+	command[0] = "ls";
+	command[1] = "-l";
+	command[2] = NULL;
+
+	//command[1][1] = 'a'; -> will create an error if added
+	/*
+		char command[3][4]; -> ([][][][])([][][][])([][][][])
+		//can't do s[4] = "hello"; -> only during declaration
+		//must use string functions instead		
+	*/
+
+	execvp( command[0], command );
+
+
+strsep - <string.h>
+
+       Used for parsing a string with a common delimeter
+
+       strsep( <SOURCE>, <DELIMETER> )
+
+       Locates the first occurrence of the delimeter in a string and replaces 
+       that character with NULL
+       *only strsep with mutable strings!*
+       
+       Returns a pointer to the beginning of the original string, 
+       sets the source string to the string starting at 1 index past the 
+       location of the new NULL.    
+
+ex:
+
+	char s[] = "hello-this-is-cool";
