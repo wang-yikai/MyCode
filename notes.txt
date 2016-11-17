@@ -1242,8 +1242,12 @@ ex:
 	char line[100] = "hello-this-is-cool";
 	char *s = line;
 	char *p;
-	p = strsep( &s, "-" ); //no new memory is used
-	printf( "s: %s\n", s );
-	printf( "p: %s\n", p );
+	while( s ) {
+	       p = strsep( &s, "-" ); 
+	       //no new memory is used (s is mutable pointer)
 
+	       printf( "s: %s\n", s );
+	       printf( "p: %s\n", p );
+	}
 	
+
