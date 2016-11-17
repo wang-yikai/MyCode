@@ -1250,4 +1250,18 @@ ex:
 	       printf( "p: %s\n", p );
 	}
 	
+SoftDev:
+
+Aim: Stay classy, css.
+
+class ex:
+      <h2 class="new_chapter bold">...</h2>
+
+Classes are specified using a . before the class name.
+
+ex:
+	.hello {
+       	       font-family: "Times New Roman", Times, serif; //specific -> general
+	       }
+
 
