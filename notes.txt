@@ -1230,8 +1230,20 @@ strsep - <string.h>
        
        Returns a pointer to the beginning of the original string, 
        sets the source string to the string starting at 1 index past the 
-       location of the new NULL.    
+       location of the new NULL.
+
+       Since the source variable's value is changed, it must be a pointer to a 
+       string.
+
+       To parse again, loop it.
 
 ex:
 
-	char s[] = "hello-this-is-cool";
+	char line[100] = "hello-this-is-cool";
+	char *s = line;
+	char *p;
+	p = strsep( &s, "-" ); //no new memory is used
+	printf( "s: %s\n", s );
+	printf( "p: %s\n", p );
+
+	
