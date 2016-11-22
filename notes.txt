@@ -1264,4 +1264,87 @@ ex:
        	       font-family: "Times New Roman", Times, serif; //specific -> general
 	       }
 
+id ex:
+   <div id="main_content">...</div>
+
+ids are specified using a  # before the id name.
+
+
+11/22/16
+Systems:
+
+Aim: Redirection; how does it ... SQUIRREL
+
+File Redirection
+     Changing the usual input/output behavior of a program
+
+Command line redirection
+ >
+	redirects stdout to a file
+	overwrites the contents of the file
+	
+	<COMMAND> > <FILE>
+	ls > file_list
+
+ >>
+	redirects stdout to a file by appending
+
+
+cheap text editor:
+      cat > foo
+
+      takes stdin and puts them into a file caled foo
+
+2>
+	redirects stderr to a file
+	OVerwrites the file (2>> appends)
+
+0: stdin
+1: stdout
+2: stderr
+
+&>
+	redirect stdout and stderr
+
+<
+	redirects stdin from a file
+ex:
+	cat > line; ls -a -l
+	./a.out < line (from executor)
+	immediately executes command. as soon as it reads it, it already gets
+	the input, so it doesn't print "what would you like to do?".
+
+| (pipe)
+	redirect stdout from one command to stdin of the next
+	ls | wc (takes output of ls to the stdin of wc)
+
+
+dup2 - <unistd.h>
+     redirect one file descriptor to another
+
+     dup2( fd1, fd2 )
+     	   Redirects fd2 to fd1
+	   Lose any reference to the original fd2, that file is closed.
+
+
+0: stdin
+1: stdout -> closed -> foo.txt
+2: stderr		|
+3: foo.txt		v (directs to 3, lose reference to stdout)
+
+
+dup - <unistd.h>
+
+    Duplcates an existing entry in the file table
+    Returns a new file descrptor for the duplicate entry
+
+    dup(fd)
+	returns the new file descriptor
+
+ex:
+	dup(1) -> creates a new file descriptor (stdout)
+	dup2(3, 1) -> now foo.txt is in 1, but stdout is still in the file table at 4.
+
+
+
 
