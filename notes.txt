@@ -1348,3 +1348,65 @@ ex:
 
 
 
+11/23/16
+
+fgets GETS EVERYTHING (INCLUDING THE \N YOU ENTER)
+
+*(strchr(line, '\n')) = NULL; sets the '\n' from input to NULL
+
+alternate way of using strsep: while(cmd[i++] = strsep( &s, " " ))
+
+11/28/16
+SoftDev:
+
+Aim: After being framed, you might need to take a REST
+
+Tips for using frameworks:
+     Many files have .min equivalents, which contains the same code without any extra formatting.
+
+     jquery is a popular javascript library used in many frameworks.
+
+     The order in which you include javascript is important. They are loaded sequentially.
+
+ex:
+	<script src="jquery-3.1.1.js"></script>
+
+
+Javascript in <head> or at the end of <body>?
+	   Yet another programmer holy war
+
+	   Advantages to head:
+	   	      scripts will definitely be loaded bofore anything else, so page elements that need scripting will be attached.
+
+	   Disadvantages to head:
+	   	      scripts will take longer to load (not compiled)
+
+	   Advantages to end of body:
+	   	      Page content loads much faster
+
+	   Disadvantages to end of body:
+	   	   Page might look fully loaded while scripts will continue to be downloaded.
+
+REST API:
+
+     Application Program Interface.
+
+     Way to interact with other existing program.
+
+     published set of protocols that can be used to have your program with others.
+
+     REST (Representational State Transfer)
+     	  APIs that transmit data back after receiving an http[s] request.
+	  Returned data can be in various formats, most common are html, xml, json.
+
+JSON (Javascript object notation)
+     Standard way of representating data. Can be easily translated into a python dictionary.
+
+ex:
+	https://api.nasa.gov/planetary/apod?api_key=....
+
+	takes one variable (api key) in the url
+
+
+
+
