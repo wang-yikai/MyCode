@@ -1408,5 +1408,69 @@ ex:
 	takes one variable (api key) in the url
 
 
+11/29/16
+Systems:
+
+Aim: Sharing is caring!
+
+Shared memory - <sys/shm.h>, <sys/ipc.h>, <sys/types.h>
+       A segment of heap memory that can be accesssed by multiple processes.
+
+       Shared memory is accessed via some key that is known by any process that needs to access it.
+
+       Shared memory does not get released when a program exits.
+
+       5 shared memory operations:
+       	 Create the segment (once)
+	 Access the segment (once per process)
+	 Attach the segment to a variable (once per process)
+	 Detach the segment from a variable (once per process)
+	 Remove the segment (once)
+
+Shared memory is not about child-parent relations, can be accessed by any process.
+
+shmget
+	Create or access a shared memory segment.
+	
+	Returns a shared memory descriptor (similar to a file descriptor), or -1 if it fails.
+
+	shmget( key, size, flags )
+
+		key
+			unique identifier for the shared memory segment ( like a file name ).
+
+		size
+			How much memory to request
+
+		flags
+			includes permissions for the segment.
+
+			combine with bitwise or
+
+			IPC_CREAT: create the segment
+				   If segment is new, will set value to all 0s.
+
+			IPC_EXCL: fail if the segment already exists and IPC_CREAT is on
+
+
+ex:
+	int sd = shmget( 24601, 4, IPC_CREAT | 644 );
+
+shmat
+	Attach a shared memory segment to a variable
+
+	Returns a pointer to the segment, or -1 (errno).
+
+	shmat( descriptor, address, flags )
+	       descriptor
+			the return value of shmget
+
+		address
+			if 0, the OS will provide the appropriate address
+
+		flags
+			Usually 0, there is one useful flag
+
+			SHM_RDONLY: makes the memory read only
 
 
