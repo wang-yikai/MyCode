@@ -1474,3 +1474,43 @@ shmat
 			SHM_RDONLY: makes the memory read only
 
 
+SoftDev:
+
+Aim: Web crawling pythons
+
+Making and parsing a REST call in python
+
+       urlib2
+		Library to handle urls
+
+		.urlopen
+			u = urllib2.urlopen(<URL>)
+
+			Open a url to be read by your program
+
+			Just opens url, doesn't get data yet.
+
+		.geturl()
+			returns the atual url (in case of redirects)
+
+		.info()
+			returns the http/s header information
+
+		.read()
+			returns the contents of the target webpage, as a string
+				e.g., if image file, returns bytes of the image.
+
+
+		
+json
+	Library to work with json data
+
+	.loads(<STRING>)
+		d = json.loads(<STRING>)
+		Turns a json object string into a dictionary
+
+	.dumps(<DICTIONARY>)
+		Turns a python dictionary into a json object string
+
+
+			
