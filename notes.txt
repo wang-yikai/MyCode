@@ -1454,7 +1454,7 @@ shmget
 
 
 ex:
-	int sd = shmget( 24601, 4, IPC_CREAT | 644 );
+	int sd = shmget( 24601, 4, IPC_CREAT | 0644 );
 
 shmat
 	Attach a shared memory segment to a variable
@@ -1513,4 +1513,10 @@ json
 		Turns a python dictionary into a json object string
 
 
-			
+11/30/16
+Systems:
+
+Aim: Memes			
+
+command: ipcs (interprocess communications) -> shows shared memories
+
