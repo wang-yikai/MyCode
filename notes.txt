@@ -1520,3 +1520,61 @@ Aim: Memes
 
 command: ipcs (interprocess communications) -> shows shared memories
 
+shmdt
+	Detach a variable from a shared memory segment
+	
+	Returns 0 upon success or -1 upon failure
+
+	shmdt( pointer )
+	       pointer
+		The address used to access the segment
+
+	example
+		shmdt( P )
+
+Detaching revokes access -> gives segmentation fault if still accessign after detach.
+
+shmctl
+	Perform operations on the shared memory segment
+
+	can remove segment operation
+
+	Each shared memory segment has metadata that can stored in a struct (shmid_ds)
+	Some of that data stored: last acces, size, pid of creator, pid of ast modification.
+	
+	shmctl( descriptor, command, buffer )
+
+		descriptor
+			return value of shmget
+
+		commands:
+			IPC_RMID: remove a shared memory segment
+
+			IPC_STAT: populate the buffer (struct shmid_ds) with information
+
+			IPC_SET: set some of the information for the segment to the info in buffer
+
+		example:
+		struct shmid_ds d;
+		shmctl( sd, IPC_RMID, &d )
+
+		
+
+ftok - <sys/ipc.h>
+
+     Generate a key useful for IPC functions
+
+     ftok( path, x )
+
+     	   path
+		a path to some file, the file must be accessible by the program
+
+	   x
+		an int used to generate the key
+
+	   The same path and x will always generate the same key
+	   Combines file + int, pseudo-random
+
+
+     sd = shmget( ftok("dir/file", 12), 1024, IPC_CREAT | 0664 );
+
