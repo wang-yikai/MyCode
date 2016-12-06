@@ -1647,6 +1647,10 @@ Systems
 
 Aim: What's a semaphore? - To control resources!
 
+With a union, you're only supposed to use one of the elements, because they're all stored at the same spot. 
+This makes it useful when you want to store something that could be one of several types. 
+A struct, on the other hand, has a separate memory location for each of its elements and they all can be used at once.
+
 Semaphore code
 	  semctl - <sys/types.h> <sys/ipc.h> <sys/sem.h>
 
@@ -1709,3 +1713,42 @@ ex:
 	i = semctl( semid, 0, IPC_RMID );
 	
 
+semop
+	perform semaphore operations (like Up/Down)
+
+	all operations performed via semop are atomic!
+
+	semop( <DESCRIPTOR>, <OPERATION>, <AMOUNT> )
+	       amount
+			the amount of semaphores you want to operate on in the semaphore set
+
+	       operation
+			a pointer to a struct sembuf value
+
+			  struct sembuf {
+			  	 short sem_op;
+				 short sem_num;
+				 short sem_flag;
+				 };
+
+			sem_num
+				the index of the semaphore you want to work on
+				
+			sem_op
+				-1: Down(S)
+				1: Up(S)
+
+				any -/+ number will work, you will be requesting/releasing that value from the semaphore.
+
+				0: Wait until the semaphore reaches 0.
+
+			sem_flag
+				Provide further options
+
+				SEM_UNDO: Allow the OS to undo the given operation
+					  Useful in the event that a program exits before it could relase a semaphore.
+
+				IPC_NOWAIT: Instead of waiting for the semaphore to be available, return an error.
+
+
+				 
