@@ -1626,7 +1626,7 @@ Semaphores in C - <sys/types.h> <sys/ipc.h> <sys/sem.h>
 		Create/get access to a semaphore.
 		Not the same as Ups(S), it does not modify the semaphore.
 
-		Returns a semaphore descri[tpr or -1 (errno).
+		Returns a semaphore descriotpr or -1 (errno).
 
 		semget( <KEY>, <AMOUNT>, <FLAGS> )
 			KEY = unique identifier (use ftok)
@@ -1642,3 +1642,57 @@ ex:
 
 		      
 		       
+12/6/16
+Systems
+
+Aim: What's a semaphore? - To control resources!
+
+Semaphore code
+	  semctl - <sys/types.h> <sys/ipc.h> <sys/sem.h>
+
+	  	 control the semaphore, including:
+		 	 set the semaphore value
+			 Remove the semaphore
+			 Get the current value
+			 Get information about the semaphore
+
+		semctl( <DECRIPTION>, <INDEX>, <OPERATION>, <DATA> )
+
+			Decription
+				return value of semget
+
+			Index
+				The index of the semaphore you want to control in the semaphore 
+				set identified by the descriptor for a single semaphore set, 0
+
+			Operation
+				One of the following constants (there are others as well)
+
+				IPC_RMID: remove the semaphore
+
+				SETVAL: Set the value (requires DATA)
+
+				SETALL: Set the value of every semaphore in the set (requires DATA)
+
+				GETVAL: returns value
+
+				IPC_STAT: Populate buffer with information about the semaphore (requires DATA)
+
+
+			Data
+				Variable for setting/storing information about the semaphore
+				(data type: union semun)
+
+				you have to declare this union in your main c file on linux machines
+
+				union semun {
+				      int val;
+				      struct semid_ds *buf;
+				      unsigned short *array;
+				      struct seminfo *_buf;
+				};
+
+					val: used to set initial value
+					buf: buffer for IPC_STAT
+
+
