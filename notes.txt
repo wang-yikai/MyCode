@@ -1638,7 +1638,7 @@ Semaphores in C - <sys/types.h> <sys/ipc.h> <sys/sem.h>
 
 ex:
 	int key = ftok( "makefile", 57 );
-	int semed = semget( key, 1, IPC_CREAT | 044 ); -> 544 = read+access (r + A).
+	int semed = semget( key, 1, IPC_CREAT | 0644 ); -> 544 = read+access (r + A).
 
 		      
 		       
@@ -1695,4 +1695,17 @@ Semaphore code
 					val: used to set initial value
 					buf: buffer for IPC_STAT
 
+
+ex:
+	int semid;
+	int key = ftok( "makefile", 22 );
+
+	semid = semget( key, 1, IPC_CREAT | 0644 );
+
+	union semun su;
+	su.val = 1;
+	int i = semctl( semid, 0, SETVAL, su );
+	i = semctl( semid, 0, GETVAL ); //doesnt need unon semun su
+	i = semctl( semid, 0, IPC_RMID );
+	
 
