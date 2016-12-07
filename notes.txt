@@ -1752,3 +1752,32 @@ semop
 
 
 				 
+12/7/16
+Systems
+
+Aim: What goes up really should come down.
+
+ex:
+	srand( time(NULL) )
+	int x = random() % 10;
+	int semid = semget( ftok("makefile", 22), 1, 0 );
+	printf("[%d] Before access, %d\n", getpid(), x );
+	
+	struct sembuf sb;
+	sb.sem_num = 0;
+	sb.sem_flg = SEM_UNDO;
+	sb.semop = -1;
+
+	semop( semid, &sb, 1 );
+	prinf("[%d] I'm in!\n", getpid());
+
+	sleep(x);
+
+	sb.sem_op = 1;
+	semop( semid, &sb, 1 );
+
+	printf("[%d] I'm done!", getpid());
+
+//processes all have to wait 8 seconds.
+
+
