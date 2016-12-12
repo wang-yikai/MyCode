@@ -1817,5 +1817,20 @@ pipe - <unistd.h>
      	   descriptors
 		Array that will contain the descriptors for each end of the pipe.
 
+ex:
+		int fds[2];
+		char s[20];
 
-	
+		pipe( fds );
+
+		int fork();
+		if( f = 0 ) {
+		    close( fd[1] );
+		    read( fds[0], s, sizeof(s) );
+		    printf( "[child] recieved: %s\n", s );
+		}
+		else {
+		     close( fd[0] );
+		     sleep(3);
+		     write( fds[1], "hello child", 12 );
+		}
