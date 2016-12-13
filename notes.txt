@@ -1898,6 +1898,19 @@ javascript
 		 can also be a number, string, arrays/lists, and dictionary (object)
 		 booleans: true/false (lowercase)
 
+Document Object Model (DOM)
+
+	 javascript derives most of its utility through being able to interact with html and xml documents.
+
+	 The DOM is an API for interacting with html. It provides a structure that we can interact with and can be manipulated by functions.
+
+	 Pages are represented as trees.
+
+Selecting HTML elements
+	  document.getElementById(<ID>) -> will return the first one
+	  document.getElementsByTagName(<TAG>) -> list
+	  document.getElementsByClassName(<CLASS>) -> list
+
 
 
 
