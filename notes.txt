@@ -1872,5 +1872,18 @@ after connection is established, removing pipe does nothing (conduit is created 
 	     mkfifo( <name>, <permissions> )
 
 	     FIFOs will block on open until both ends of the pipe have a connection.
-    
+
+
+SoftDev    
+
+Aim: Learning to write in script
+
+javascript
+	Programming language originally designed to augment html and to be run locally on a web browser.
+
+	No direct relationship with java, though both have similar syntax.
+
+	Dynamically typed - variable types are rpvoded at runtime (like python).
+
+	Most development will be done through a web browser's console.
 
