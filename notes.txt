@@ -1887,3 +1887,18 @@ javascript
 
 	Most development will be done through a web browser's console.
 
+	console.log()
+		There is no built in i/o. console.log() will display a string to the console.
+		
+		"undefined" means that the variable is undefined
+
+	C-style syntax
+
+	Variable basics: var (decimals -> doubles)
+		 can also be a number, string, arrays/lists, and dictionary (object)
+		 booleans: true/false (lowercase)
+
+
+
+
+
