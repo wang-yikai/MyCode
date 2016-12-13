@@ -1860,4 +1860,17 @@ pipe: prw-r--r--
 multiple reading / writing in pipes: gives confusion on what you are recieving.
 	 (cat pipe)/(cat > pipe) 
  
+after connection is established, removing pipe does nothing (conduit is created already)
+
+      mkfifo - <sys/types.h> <sys/stat.h>
+      	     c funciton to create a FIFO
+
+	     Returns 0 on success and -1 on failure
+
+	     Once created, the FIFO acts like a regular file, and we can use open, read, write and close on it.
+
+	     mkfifo( <name>, <permissions> )
+
+	     FIFOs will block on open until both ends of the pipe have a connection.
+    
 
