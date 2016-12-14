@@ -1940,9 +1940,40 @@ Basic handshake procedure:
 
       8) Client receives server's message, removes private (connection is there).
 
+Softdev
 
+Aim: Functional code
+
+     	document.getElementById(<ID>) -> will return the first one
+	document.getElementsByTagName(<TAG>) -> list
+	document.getElementsByClassName(<CLASS>) -> list
 
       
-		
+	They get nodes and display it toString();
+
+Manipulating DOM elements
+
+	list.remove() removes the node.
+	.innerHTML -> changes content between the tags
+	document.createElement( <HTML TAG NAME> ) -> adds a node
+	.appendChild( <ELEMENt> )
+	.setAttribute( <NAME>, <VALUE> )
+	.getAttribute( <NAME> )
+	.addEventListener( <EVENT>, <FUNCTION> ) -> every node can have a listener attached to it
+
+Functions in javascript!
+	  
+	  javascript is functional. Like Scheme (Racket)!
+
+	  Functions are first class objects that can be used like any other value.
+
+	  like lamba (fxn that creates fxn)
+	       function() creates anonymous functions
+
+	       var foo = function() { console.log("yo"); }; -> function() is a statement
+
+
+
+	
 
 
