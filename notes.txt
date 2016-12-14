@@ -1972,6 +1972,8 @@ Functions in javascript!
 
 	       var foo = function() { console.log("yo"); }; -> function() is a statement
 
+	  b.addEventListener( "click", function() { alert("ANNOYING!"); } ); -> must have a function value (can't be just alert())
+
 
 
 	
