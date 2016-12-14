@@ -1913,5 +1913,36 @@ Selecting HTML elements
 
 
 
+12/14/16
+Systems
+
+Aim: Always remember to tip your servers.
+
+
+Server/Client Program Paradigms
+	      Handshake
+		A prodcedure to ensure that a connection has been established
+
+		Both ends of the connection must verify that they can send and recieve data to and from each other.
+
+
+Basic handshake procedure:
+      1) Server creates a FIFO (well known pipe).
+      2) Server wait for a connection (use open)
+
+      3) client, create "private" FIFO
+      4) Client connects to server and sends the private IFO name.
+
+      5) Client waits for a message from the server.
+      6) Server recieves a passage and can remove WKP (well known pipre).
+
+      7) Server connects to silent FIFO, sends a initial ackonowledgement mesage.
+
+      8) Client receives server's message, removes private (connection is there).
+
+
+
+      
+		
 
 
