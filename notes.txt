@@ -1981,7 +1981,7 @@ b.addEventListener( "click", function(e) { console.log(e); } ); -> argument woul
 
 var f = function(e) { 
     console.log(e);
-    console.log(this); -> goes to node (e.g. returns <button id="b">... ) 
+    console.log(this); -> gives DOM element (e.g. returns <button id="b">... ) 
 };
 b.addEventListener( "click", f ); -> f is bound to a function (doesn't need to list parameters)
 
