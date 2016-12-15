@@ -1973,6 +1973,19 @@ Functions in javascript!
 	       var foo = function() { console.log("yo"); }; -> function() is a statement
 
 	  b.addEventListener( "click", function() { alert("ANNOYING!"); } ); -> must have a function value (can't be just alert())
+ -> Thats because functions have return values, alert as second argument -> means call alert -> put return value as event listener (alert has no return, so attached no function (undefined))
+
+The other example, the function "returns" a function
+
+b.addEventListener( "click", function(e) { console.log(e); } ); -> argument would be the event listener
+
+var f = function(e) { 
+    console.log(e);
+    console.log(this); -> goes to node (e.g. returns <button id="b">... ) 
+};
+b.addEventListener( "click", f ); -> f is bound to a function (doesn't need to list parameters)
+
+
 
 
 
