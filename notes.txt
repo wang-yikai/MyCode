@@ -1996,3 +1996,17 @@ Systems
 ...
 
 can fork server (server =  queen bee)
+
+
+12/19/16
+Systems
+
+serverhandshake1(buffer) -> up to remove(WKP)
+handshakemsg = ~10 char * length
+buffer has name of WKP of client
+serverhandshake2(buffer) -> simply the other half
+
+SoftDev
+
+performance.now() -> time to run program
+
