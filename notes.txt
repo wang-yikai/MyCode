@@ -2063,7 +2063,10 @@ Physical Layer
 
 		In Thicknet and Thinnet, all data is sent to all computers
 
+		As we add more connections, the signal gets degraded (some electricity splits off to computer (each computer increases power drain in the entire system)).
 
+
+		
 		
 
 
