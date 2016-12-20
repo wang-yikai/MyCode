@@ -2042,6 +2042,9 @@ OSI 7 Layer Model
 
 	When you work on a particular layer, you don't have to think about the other layers
 	
+Physical Layer
+	How computers are physically connected (used copper wires to send high/low voltage, WiFi, bluetooth, cellular data, fiber optics, RFID, ect.)
+
 	
 	
 
