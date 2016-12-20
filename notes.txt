@@ -2049,6 +2049,22 @@ Physical Layer
 
 	Brief history:
 	
+		Thicknet
+			A single coaxial cable runs throughout the network, "vampire taps" go into the cable and leech the data out (cut a hole).
+				ex: [computer]	[computer]	[computer]
+					|		|		|
+				--------------------------------------------------
+		
+		Thinnet
+			A single coaxial cable runs throughout the network, T-Junctions used to splice connections
+				ex: [computer]	[computer]	[computer]
+					|		|		|
+				-------[]--------------[]--------------[]-----------
+
+		In Thicknet and Thinnet, all data is sent to all computers
+
+
+		
 
 
 
