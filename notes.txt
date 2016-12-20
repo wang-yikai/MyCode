@@ -2010,3 +2010,51 @@ SoftDev
 
 performance.now() -> time to run program
 
+12/20/16
+Systems: 
+
+Aim: Cisco in an hour
+
+For 2 computers to communicate:
+-Identification
+-Send/recieve data
+-Security
+-Data packaging/message
+-Composition
+-Connection verification
+-User interaction
+
+OSI 7 Layer Model
+	Used to help conceptualize the different parts of network connections.
+
+	Built more layers on top of the lower layer -> application layer (top) (web browser/email client)
+
+	The top layer is the most concrete, with each subsequent layer becoming more abstract (relying less on the physical connections and more on code).
+
+	Layers:
+		1. Physical
+		2. Data link
+		3. Network
+		4. Transport
+		5. Session
+		6. Presentation
+		7. Application
+
+	When you work on a particular layer, you don't have to think about the other layers
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
