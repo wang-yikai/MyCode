@@ -2066,14 +2066,54 @@ Physical Layer
 		As we add more connections, the signal gets degraded (some electricity splits off to computer (each computer increases power drain in the entire system)).
 
 
-		
-		
+12/21/16
+Systems
+
+Aim: Cisco in an hour. Part II: Electric Boogaloo
+
+Token ring:
+      Each computer is connected in a ring to each other: no signal degradation (signal gets transmitted around)
+      	   Only one computer has command of network resources at a time (having the token) -> passes from computer to computer
+
+	   The network sends a "token" throughout the ring, which contains the identity of the computer allowed
+	   to use the network. All other computers must wait to use the network.
+	   
+	   No possibility of collisions.
+
+
+Ethernet:		
+	Multiple computers connect to a single hub or switch
+
+	[computer]-	   -[computer]
+		  |	   |
+		  [swtich/hub]
+
+	hub:
+		broadcasts the data to ALL the computers
+
+	switch:
+		sends data to a specific computer
+
+	The more computers added to an ethernet network, the greater the chance of collisions 
+
+	WiFi: an ethernet hub that uses radio waves
+
+
+Layer 2:
+Data link layer
+     point-to-point transmission between devices on the same local network
+
+     (don't care about physical connection)
+
+     Ethernet Connctions:
+     	      Each device is given a unique 6-byte MAC (Media Access Control) address.
+	      this is set on each network card when it is made
+
+	      (seperate and less regulated than IP address)
 
 
 
-
-
-
+	
 
 
 
