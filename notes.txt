@@ -2105,18 +2105,42 @@ Data link layer
 
      (don't care about physical connection)
 
-     Ethernet Connctions:
+     Ethernet Connections:
      	      Each device is given a unique 6-byte MAC (Media Access Control) address.
 	      this is set on each network card when it is made
 
 	      (seperate and less regulated than IP address)
 
 
-HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI
-HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI
-HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI
-HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI HI YIKAI
+12/22/16
+Systems
 
+Aim: Cisco in an hour III: In 3-D!
+
+Ethernet connections:
+	Data is packaged into frames
+		Ethernet frame:
+		<prefix><dest><source><...><data><checksum>
+		8B	6B	6B	6B  46-1500B   4B
+
+		prefix: recognize the beginning of a new frame
+			10101010 * 7 + 10101011
+
+		destination/source: MAC address
+
+		...: information about frame type
+
+
+		checksum: data validation (insures data integrity) -> checks hash to checksum
+			if doesn't validate, request to send back
+
+
+		MTU: Maximum transmission unit
+			1500B for ethernet
+
+
+		
+	
 
 
 	
