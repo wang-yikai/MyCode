@@ -2135,8 +2135,8 @@ Ethernet connections:
 			if doesn't validate, request to send back
 
 
-		MTU: Maximum transmission unit
-			1500B for ethernet
+	MTU: Maximum transmission unit
+		1500B for ethernet
 
 
 		
