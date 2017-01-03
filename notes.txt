@@ -2162,7 +2162,9 @@ traceoute" will tell you about ex: google.com
 	   1. our ip (also times to get there, back, and then there)
 	   2. gateway
 	   3. switches (not shown)
-	   4. 
+	   4. finally gets to google
+
+
 	
 	
 
