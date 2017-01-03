@@ -2139,7 +2139,31 @@ Ethernet connections:
 		1500B for ethernet
 
 
-		
+1/3/16
+Systems
+
+Aim: Cisco in an hour: A New Hope
+
+Network Layer:
+	transmission of data between two separate networks
+
+	It is not concerned with whether or not data was sent successfully (connectionless).
+
+	Major features of this layer are addressing, routing and packet forwarding.
+
+IP (internet protocol) addresses
+   IPV4: 4 byte address
+   	 [0-225].[0-225].[0-225].[0-225]
+	 (each set is an unsigned octet)
+
+Routing is made easier by having IP addresses distrbuted in blocks.
+
+traceoute" will tell you about ex: google.com
+	   1. our ip (also times to get there, back, and then there)
+	   2. gateway
+	   3. switches (not shown)
+	   4. 
+	
 	
 
 
