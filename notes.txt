@@ -2158,8 +2158,8 @@ IP (internet protocol) addresses
 
 Routing is made easier by having IP addresses distrbuted in blocks.
 
-traceoute" will tell you about ex: google.com
-	   1. our ip (also times to get there, back, and then there)
+traceroute will tell you about ex: google.com
+	   1. our ip (also trial times (split into 3 packages))
 	   2. gateway
 	   3. switches (not shown)
 	   4. finally gets to google
