@@ -2164,9 +2164,53 @@ traceroute will tell you about ex: google.com
 	   3. switches (not shown)
 	   4. finally gets to google
 
+1/4/17
+Systems
 
+Aim: Cisco in an hour V for Vendetta
+
+Network Layer
+	Data is broken into packets (IPv4)
 	
+	<header info (2B)><packet length (2B)><fragment info (4B)><time-to-live(1B)><protocol (1B)><header checksum (2B)><source (4B)><destination (4B)><...(4B)><data (20-65,535B)>
+
+	header info: packet type (IPv4/6), header length	
+
+Data is chopped up into fragments -> fragment info e.g. 3rd fragment of 12
+(network layer is not concerned with matching fragments together)
+
+	 time to live: encode a number of maximum hops (device to device)
+	      	       when packet dies, send response back
 	
+	protocol: (helpful for layer 4) TCP/UDP/...
+		       
+	unlike ethernet checksum, it is just for the header, NOT data.
+
+	source and destination: IPv4 address, so 4B each
+
+	...: optional information
+
+	IPv4 MTU is 65,535B
+
+	IPv6
+		biggest difference is the address space goes from 2^32 -> 2^128
+
+		written in 8 groups for 3 hexadecimal digits
+			87ab : 301c : 2143 : ff87 : abcd : dead : feed
+
+		leading 0s are ignored, consecutive 0-groups can be replaced with ::, but only once in an address.
+
+	IPv4
+		can be represented with 5 0-groups, 1 f-group (96 bits)
+		followed by the regular IPv4 address (32 bits)
+
+		:: ffff : 149.89.150.100
+
+	jumbograms
+		Increases the MTU to ~4.3 billion (2^32)
+
+	other improvements in IPv6 make the protocol incompatible with IPv4
+
 
 
 	
