@@ -2211,7 +2211,49 @@ Data is chopped up into fragments -> fragment info e.g. 3rd fragment of 12
 
 	other improvements in IPv6 make the protocol incompatible with IPv4
 
+1/5/17
+Systems
 
+Aim: Cisco in an hour VI: The Undiscovered Country
+
+Layer 4: Transport Layer
+	Computer to computer connection over a network
+
+	Unconcerned with the individual hops of layer 3 traffic
+
+	Network port allows computer to respond to multiple connections
+		ex: ip = street address, port = apt #
+
+	65,535 ports. Ports < 1024 are well-known, reserved ports
+		Each port corresponds to a particular service. ex: port 22 = ssh, http = port 80
+
+	Regulated by the Internet Assigned Numbers Authority (IANA)
+
+
+TCP
+	Transmission Control Protocol
+	
+	Reliable connection + guarantees delivery of data
+
+	Data is considered a continuous stream that arrives in the order it is sent (which may not be true in the network layer)
+		(like reading a file)
+
+	Connections are established using a 3-way handshake
+		Server "binds" to a port and waits
+		1. Client sends a SYN message to the server
+		2. Server sends the client a SYN_ACK message (acknowledges message)
+		3. Client sends an ACK message to the server
+	
+UDP
+	User Datagram Protocol
+
+	Does not require an explicit connection 
+
+	Data is sent as discrete datagrams with a set size (as opposed to a continuous stream)
+
+	Datagrams may be dropped or recieved out of order
+
+	
 
 	
 
