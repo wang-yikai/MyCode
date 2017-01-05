@@ -2251,9 +2251,11 @@ UDP
 
 	Data is sent as discrete datagrams with a set size (as opposed to a continuous stream)
 
-	Datagrams may be dropped or recieved out of order
+	Datagrams may be dropped or recieved out of order (like bittorrent)
 
-	
+	Assumes that any kind of error checking is handled at a later level
+
+
 
 	
 
