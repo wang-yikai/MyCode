@@ -2254,7 +2254,7 @@ UDP
 	Datagrams may be dropped or recieved out of order (like bittorrent)
 
 	Assumes that any kind of error checking is handled at a later level
-		Big advantage is speed (speed vs quality)
+		Big advantage is speed (speed vs quality) - many videogames use this protocol
 
 	
 
