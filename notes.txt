@@ -2334,8 +2334,10 @@ Sockets - sys/socket.h, sys/types.h
 			       		 
 					 INADDR_ANY: Any incoming connection
 
-
-					
+					 inet_aton( <string>, <address variable> )
+					 	    
+						    Will convert a string representing an ip address to the correct format and place it in the second parameter
+					 
 
 
 
