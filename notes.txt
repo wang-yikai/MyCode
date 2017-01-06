@@ -2256,8 +2256,37 @@ UDP
 	Assumes that any kind of error checking is handled at a later level
 		Big advantage is speed (speed vs quality) - many videogames use this protocol
 
-	
+1/6/17
+Systems
 
+Aim: Cisco in an Hour VII: Adrian's Revenge
+
+Remaining layers
+	  5. Session
+	  6. Presentation
+	  7. Application
+
+These layers are incorporated into programs that use network connections
+
+Session layer represents end-to-end connections in a program (sockets).
+	
+Presentation layer represents how programs package transmitted data.
+	     (APIs are pretty much the presentation layer)
+	     
+Application layer represents the programs that users interact with
+	    ex: using a web browser, Spotify, playing a game ect.
+
+
+Sockets - sys/socket.h, sys/types.h
+
+	A socket is a connection between two computers created programatically
+	  has 2 ends, each one consisting of an IP Address/Port pair.
+
+	To use socket:
+	   1. create the socket
+	   2. bind it to an address and port
+	   3. listen/initiate a connection
+	   4. send/recieve data
 
 	
 
