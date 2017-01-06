@@ -2285,7 +2285,7 @@ Sockets - sys/socket.h, sys/types.h
 	To use socket:
 	   1. create the socket
 	   2. bind it to an address and port
-	   3. listen/initiate a connection
+	   3. listen/initiate a connection (handshake)
 	   4. send/recieve data
 
 	3 + 4 will be different for TCP and UDP
@@ -2308,7 +2308,18 @@ Sockets - sys/socket.h, sys/types.h
 
 				If set to 0, the OS will set to correct protocol
 
+		ex:
+			int sd = socket( AF_NET, SOCK_STREAM, 0);
 
+
+	bind - <sys/socket.h>
+
+	     Binds the socket to an address and port
+
+	     Returns 0 (success) or -1 (failure)
+
+	     A server might bind to any incoming address but only a specific 
+	     port, whereas a client would bind to a specific address and port.
  
 		
 		
