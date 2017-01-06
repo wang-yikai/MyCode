@@ -2288,9 +2288,30 @@ Sockets - sys/socket.h, sys/types.h
 	   3. listen/initiate a connection
 	   4. send/recieve data
 
-	
+	3 + 4 will be different for TCP and UDP
+
+	socket <sys/socket.h>
+	       
+	       Creates a socket and returns a socket descriptor (int that works like a file descriptor)
+
+	       socket( <domain>, <type>, <protocol> )
+	       	       domain: type of address, IPv4, IPv6...
+		       	       AF_INET: IPv4
+			       AF_INET6: IPv6
+			       
+			type: tcp/udp
+			      SOCK_STREAM: tcp
+			      SOCK_DGRAM: udp
+
+			protocol
+				Combination of domain and type settings
+
+				If set to 0, the OS will set to correct protocol
 
 
+ 
+		
+		
 
 
 
