@@ -2321,11 +2321,21 @@ Sockets - sys/socket.h, sys/types.h
 	     A server might bind to any incoming address but only a specific 
 	     port, whereas a client would bind to a specific address and port.
  
+		bind( <socket descriptor>, <address>, <address length> )
+		      
+		      socket descriptor: return value of socket
 		
-		
+		      address: pointer to struct sockaddr_in
+		      	       
+			       sin_family: address domain (e.g. AF_NET)
+
+			       sin_addr: 
+			       		 IP address in binary
+			       		 
+					 INADDR_ANY: Any incoming connection
 
 
-
+					
 
 
 
