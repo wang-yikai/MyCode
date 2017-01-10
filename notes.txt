@@ -2337,8 +2337,56 @@ Sockets - sys/socket.h, sys/types.h
 					 inet_aton( <string>, <address variable> )
 					 	    
 						    Will convert a string representing an ip address to the correct format and place it in the second parameter
+						    
+						    sin_addr.s_addr = INADDR_ANY; //any local ip address
 					 
-					
+1/9/17
+Systems
+
+Sockets
+
+
+inet_aton -> use <arpa/inet.h>
+	  Will convert a string representing an ip address to the correct format and place it in the second parameter.
+
+sin_port
+	htons( int )
+	       returns the port in the correct order
+
+	       uses big endian: most significant byte first
+
+short s = 256;
+
+00000001 00000000 -> big endian
+
+00000000 00000001 -> little endian (all the way to the left, reverse the bytes, not the bits)
+
+ex: Server Side
+
+int sd;
+int connection;
+char buffer[200];
+
+sd = socket( AF_NET, SOCK_STREAM, 0 )
+struct sockaddir_in sock;
+sock.sin_family = AF_INET;
+sock.sin_addr.s_addir = INADDR_ANY;
+sock.sin_port = htons( 9001 );
+
+bind( sd, (struct sockaddr *)&sock, sizeof(sock) );
+
+Client Side:
+int sd;
+char *host = "127.0.0.1"
+
+sd = socket( AF_NET, SOCK_STREAM, 0 )
+struct sockaddir_in sock;
+sock.sin_family = AF_INET
+inet_aton( host, &(sock.sin_addr) );
+sock.sin_port = htons( 9001 );
+
+bind( sd, (struct sockaddr *)&sock, sizeof(sock) );
+
 
 
 
