@@ -2400,12 +2400,30 @@ listen (server only!!) <sys/socket.h>
 	      ex:
 		listen( sd, 1 ) -> returns 0 or -1 (failure)
 
+accept (server only!!) <sys/socket.h>
+       set up a tcp connection
 
+       handles the required 3-way handshake
 
+       A complete socket has 5 important pieces of information, IP address and port # for both client and server, and protocol (tcp/udp)
 
+       Once a client connection gets past listen(), accept creates a new socket with the client information added, and returns a descriptor to the new socket. 
+       Original socket will still exist (as a listening socket)
 
+       accept ( <socket descriptor>, <socket address>, <address length> )
+       	      socket descriptor: return value of socket
 
+	      address: pointer to a struct pointer sockaddr_in
+	      	       will contain the correct address information after the connection is made
 
+	      length: pointer to a variable with the size of the address will be set after the connection is made.
+
+ex:
+	listen(sd, 1);
+
+	struct sockaddr_in sock1;
+	unsigned int socklen = sizeof(sock1)
+	connection = accept( sd, (struct sockaddr *)&sock, &socklen ); 
 
 
 
