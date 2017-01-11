@@ -2411,6 +2411,8 @@ accept (server only!!) <sys/socket.h>
        Original socket will still exist (as a listening socket)
 
        accept ( <socket descriptor>, <socket address>, <address length> )
+		returns the socket descriptor of the new socket (arguments same as bind)
+
        	      socket descriptor: return value of socket
 
 	      address: pointer to a struct pointer sockaddr_in
@@ -2422,12 +2424,30 @@ ex:
 	listen(sd, 1);
 
 	struct sockaddr_in sock1;
-	unsigned int socklen = sizeof(sock1)
+	unsigned int socklen = sizeof(sock1);
 	connection = accept( sd, (struct sockaddr *)&sock, &socklen ); 
 
 
+1/11/17
+Systems
 
+Aim: Get more power from your sockets
 
+Sockets in c
+
+connect (client only!!) <sys/socket.h> <sys/types.h>
+	Connect to another program over a socket
+
+	Handles the client end of the 3 way handshake
+
+	connect( <socket descriptor>, <address>, <address size> )
+		address size is the same as in bind
+
+ex:
+Server Side:
+read( connection, buffer, sizeof(buffer) );
+Client Side:
+connect( sd, (struct sockaddr *)&sock, sizeof(sock) );
 
 
 
