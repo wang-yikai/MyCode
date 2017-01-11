@@ -2481,7 +2481,9 @@ AJAX
 
 		data: data to be sent
 
-	
+		success: function to be called if the server responds
+			This function can take an argument if the server sends data in responses
+				
 
 
 
