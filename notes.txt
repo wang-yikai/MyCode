@@ -2492,8 +2492,38 @@ AJAX
 		}
 	});
 
+		jquery also has $.get() and $.post() wrappers
+			$.get( <url>, <callback function> );
 			
+			ex:
+				$.get( "/foo/", function(d) { console.log(d); });
 
+
+
+
+
+ex:
+
+Javascript side:
+var post = function( e ) {
+	var input = document.getElementById("input").value;
+
+	$.ajax({
+		url: '/upcase/',
+		type: "GET",
+		data: { "text": input },
+		success: function( d ) {
+			var h = document.getElementById("h");
+			d = JSON.parse(d)
+			h.innerHTML = d['result'];
+		}
+	});
+};
+				
+Flask side:
+data = request.args.get(...
+result = ...
+json.dumps(result)
 
 
 
