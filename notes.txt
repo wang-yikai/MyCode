@@ -2448,6 +2448,23 @@ read( connection, buffer, sizeof(buffer) );
 Client Side:
 connect( sd, (struct sockaddr *)&sock, sizeof(sock) );
 
+Softdev
+
+Aim: Defeating the Trojans with the help of AJax
+
+AJAX
+
+	Asynchronus Javascript And Xml
+
+	System created to send data to a server in the background of a page without having to reload the page or wait for the server to acknowledge the change
+
+	Not a language.
+
+	It is a combination of technologies combined: ex: javascript, html, DOM and XML
+
+	Ajax calls can send data to a server using GET or POST, and then catch the data sent by the server in response.
+
+	Originally, XML was the only supported format for sending/receiving data, but now many formats are used, including JSON and plain text.
 
 
 
