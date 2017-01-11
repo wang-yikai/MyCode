@@ -2483,7 +2483,16 @@ AJAX
 
 		success: function to be called if the server responds
 			This function can take an argument if the server sends data in responses
-				
+	$.ajax({
+		url: "/foo",
+		type: "GET",
+		data: "Look it's information!",
+		success: function(d) {
+			console.log(d);
+		}
+	});
+
+			
 
 
 
