@@ -2343,8 +2343,7 @@ Sockets - sys/socket.h, sys/types.h
 1/9/17
 Systems
 
-Sockets
-
+Aim: Socket to me
 
 inet_aton -> use <arpa/inet.h>
 	  Will convert a string representing an ip address to the correct format and place it in the second parameter.
