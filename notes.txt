@@ -2493,10 +2493,10 @@ AJAX
 	});
 
 		jquery also has $.get() and $.post() wrappers
-			$.get( <url>, <callback function> );
+			$.get( <url>, (data), <callback function> );
 			
 			ex:
-				$.get( "/foo/", function(d) { console.log(d); });
+				$.get( "/foo/", (data), function(d) { console.log(d); });
 
 
 
