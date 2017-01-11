@@ -2466,7 +2466,22 @@ AJAX
 
 	Originally, XML was the only supported format for sending/receiving data, but now many formats are used, including JSON and plain text.
 
+	AJAX calls can be made via the XMLHttpRequest javascript object
 
+	Using jquery for AJAX
+		The jquery library provides clean wrapper functions for making AJAX calls
+
+	$.ajax( <SETTINGS> );
+		Settings is an associative array containing all the information required to make the given ajax call.
+
+	Notable settings keys:
+		url: server target link
+
+		type: Method ("POST" vs "GET")
+
+		data: data to be sent
+
+	
 
 
 
