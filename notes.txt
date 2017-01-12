@@ -2526,6 +2526,13 @@ result = ...
 json.dumps(result)
 
 
+1/12/17
+Systems
+
+server update: move sd = server_setup() since, unlike pipes, sd doesn't get removed
+
+client update: don't need bind() (more useful for UDP) for tcp (connect R/W)
+
 
 
 
