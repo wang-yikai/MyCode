@@ -2534,6 +2534,8 @@ server update: move sd = server_setup() since, unlike pipes, sd doesn't get remo
 client update: don't need bind() (more useful for UDP) for tcp (connect R/W)
 
 
+cs lab computer: 149.89.150.1xx
+
 
 
 
