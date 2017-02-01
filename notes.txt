@@ -2556,7 +2556,9 @@ How would you represent color data if you only had the following amount of space
 
 color depth = number of bits used per pixel
 
-
+Image File Formats:
+Lossless, lossy (some loss of information, not exact representation)
+compressed (shrinked), uncompressed (raw data)
 
 
 
