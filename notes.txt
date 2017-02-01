@@ -2560,6 +2560,12 @@ Image File Formats:
 Lossless, lossy (some loss of information, not exact representation)
 compressed (shrinked), uncompressed (raw data)
 
+.jpeg = compressed + lossy
+.png = compressed + lossless
+.bmp = uncompressed + lossless
+.tiff = umcompressed + lossless
+.raw = uncompressed + lossless
+.gif = uncompressed + lossless (related to .png)
 
 
 
