@@ -2554,6 +2554,8 @@ How would you represent color data if you only had the following amount of space
 4) 4 bits (RGB + intensity for all)
 5) 6 bits (RGB + intensity for each)
 
+color depth = number of bits used per pixel
+
 
 
 
