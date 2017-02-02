@@ -2543,7 +2543,7 @@ cs lab computer: 149.89.150.1xx
 2/1/17
 Graphics
 
-AIm: Bits o' pixels?
+Aim: Bits o' pixels?
 
 How would you represent color data if you only had the following amount of space for each pixel?
 
@@ -2568,6 +2568,27 @@ compressed (shrinked), uncompressed (raw data)
 .gif = uncompressed + lossless (related to .png)
 
 
+2/2/17
+Graphics
+
+Image File Formats:
+Uncompressed: every pixel has an entry
+Compressed: fewer data points (compression algo figures it out)
+Lossless: no info lost
+Lossy: we don't have the original info
+
+camera: image size would be huge if not compressed
+.jpg = used frequently on web, smoothes out similar colors (doesn't lose too much data)
+.png = algo of compression doesn't lend itself good w/ photos
+
+.zip = loseless (get original back, trouble if lossy)
+.png does the same
+
+Run Length Encoding:
+    GGGRPPPP
+ -> 3G1R4P (got rid of 2 pixels)
+    No loss of data
+    Good for logos (no lighting/shading), images w/ similar colors in a row
 
 
 
