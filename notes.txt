@@ -2597,6 +2597,23 @@ raster format = data corresponds to pixels
 .pdf = vector format, image data is stored as a list of commands.
        used in text, diagrams, images can be stored in a container as other formats
 
+Net PBM:
+family of formats
+
+We will be using .ppm files.
+   All whitespace is the same
+   2 parts to the file: header + pixel data
+     Header starts w/ P3 then -> (X resolution + Y resolution + MAX color value)
+     Pixel Data = RGB RGB RGB RGB...
+
+
+
+
+
+
+
+
+
 
 
 
