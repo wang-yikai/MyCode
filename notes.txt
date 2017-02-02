@@ -2593,6 +2593,10 @@ Run Length Encoding:
 .gif allows you to stick images together (like a loop)
  -> relies on similar encoding, the image gets smaller/pixelated to use that encoding
 
+raster format = data corresponds to pixels
+.pdf = vector format, image data is stored as a list of commands.
+       used in text, diagrams, images can be stored in a container as other formats
+
 
 
 
