@@ -2590,6 +2590,9 @@ Run Length Encoding:
     No loss of data
     Good for logos (no lighting/shading), images w/ similar colors in a row
 
+.gif allows you to stick images together (like a loop)
+ -> relies on similar encoding, the image gets smaller/pixelated to use that encoding
+
 
 
 
