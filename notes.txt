@@ -2656,7 +2656,7 @@ code for MongoDB looks like json
 }
 
 $mongod (server process)
-
+	can have db, which contains collections
 
 
 
