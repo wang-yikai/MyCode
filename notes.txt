@@ -2613,9 +2613,22 @@ P3		|-> header
 -> * 10 rows
 
 
+SoftDev
 
+Aim: Documenting your data
 
+NoSQL -> SQL has been around since the 70s, but other kinds of databases have popped up (graph, document based, ect)
 
+Document-Oriented DB:
+	Records are stored as documents.
+
+	Each document contains all the data that is associated with the given record, in key-value pairs (fields).
+
+	E.g. storing a db of students, each row becomes a standalone document.
+
+	Do not need to specify the type of data put into each field.
+
+	Fields can contain many different kinds of data, including lists and dictionaries.
 
 
 
