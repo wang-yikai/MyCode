@@ -2634,7 +2634,26 @@ Document-Oriented DB:
 
 	Documents in the same collection do not need to have the same fields.
 
+code for MongoDB looks like json
 
+{
+	_id: OjectId(...,
+	title: ...,
+	description: ...,
+	tags: [ ... ],
+	likes: ...,
+	comments: [
+		  {
+			user: ...
+			message: ...
+			dateCreated: ...
+			like: ...
+			},
+
+			{ ....
+			}
+		]
+}
 
 
 
