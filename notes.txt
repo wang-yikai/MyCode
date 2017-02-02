@@ -2606,7 +2606,11 @@ We will be using .ppm files.
      Header starts w/ P3 then -> (X resolution + Y resolution + MAX color value)
      Pixel Data = RGB RGB RGB RGB...
 
-
+ex: pic.ppm
+P3		|-> header
+10 10 255	|-> header
+255 255 0 * 10 (columns)
+-> * 10 rows
 
 
 
