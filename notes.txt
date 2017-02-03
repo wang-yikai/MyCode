@@ -2658,7 +2658,23 @@ code for MongoDB looks like json
 $mongod (server process)
 	can have db, which contains collections
 
+2/3/17
+Graphics
 
+ex:
+convert command: convert pic.ppm pic.png
+display command: display pic.png
+
+for{
+	for {
+	    
+	    r
+	    g
+	    b
+
+	    write: "%d %d %d\n";
+	    }
+}
 
 
 
