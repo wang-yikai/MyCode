@@ -2693,6 +2693,8 @@ To access databases and collections, you can use either [] or .
 
 (stay consistent!)
 
+students = db.students
+
 
 
 
