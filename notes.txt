@@ -2695,7 +2695,7 @@ To access databases and collections, you can use either [] or .
 
 students = db.students
 
-c = db['students'] #db.students
+c = db['mydb']['students'] #db.mydb.students
 
 Databases and collections are not created until a document has been added to 
 them!
