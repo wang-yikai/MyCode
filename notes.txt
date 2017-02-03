@@ -2700,7 +2700,7 @@ c = db['students'] #db.students
 Databases and collections are not created until a document has been added to 
 them!
 
-students.count() or db.students.count()
+students.count() or db.students.count() -> number of documents
 
 To add a document:
 
@@ -2710,6 +2710,8 @@ To add a document:
       doc = { "name": "bob", "age": 65 }
 
       c.insert_one( doc )
+      
+      Can insert a list of documents with insert_many()
 
 
 
