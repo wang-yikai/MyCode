@@ -2677,6 +2677,21 @@ for{
 }
 
 
+SoftDev
+
+Working with pymongo
+	from pymongo import MongoClient
+
+	connecting to a mongodb server and database
+
+		   server = MongoClient(<IP>)
+
+To access databases and collections, you can use either [] or .
+
+   db = server['mydb']
+   db = server.mydb
+
+(stay consistent!)
 
 
 
