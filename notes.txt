@@ -2702,6 +2702,16 @@ them!
 
 students.count() or db.students.count()
 
+To add a document:
+
+   1. create a dictionary
+   2. insert it to the collection
+
+      doc = { "name": "bob", "age": 65 }
+
+      c.insert_one( doc )
+
+
 
 
 
