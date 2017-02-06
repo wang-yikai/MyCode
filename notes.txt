@@ -2727,7 +2727,23 @@ Bresenham's Line Algorithm
 [X][X][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ]
 [X][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ]
 
+1) y = mx + b
+2) y = ((delta y)/(delta x))x + b
+   0 = ((delta y)/(delta x))x + b - y
+   0 = (delta y)x - (delta x)y + (delta x)b
 
+   A = delta y
+   B = - delta x
+   C = (delta x) * b
+
+   0 = Ax + By + C
+
+   f(x,y) = Ax+By+C
+
+   f(x,y) = 
+   	    0: (x,y) is on the line
+	    <0: (x,y) is above the line
+	    >0: (x,y) is below the line
 
 
 
