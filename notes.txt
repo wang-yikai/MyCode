@@ -2713,6 +2713,19 @@ To add a document:
       
       Can insert a list of documents with insert_many()
 
+2/6/17
+Graphics
+
+Bresenham's Line Algorithm
+
+[X][X][X][X][X][X][X][X][X][X][X][X] -> y = c, x = c, y = x line ez
+[X][ ][ ][ ][ ][ ][X][ ][ ][ ][ ][ ]
+[X][ ][ ][ ][ ][X][ ][ ][ ][ ][ ][ ]
+[X][ ][ ][ ][X][ ][ ][ ][ ][ ][ ][ ]
+[X][ ][ ][X][ ][ ][ ][ ][ ][ ][ ][ ]
+[X][ ][X][ ][ ][ ][ ][ ][ ][ ][ ][ ]
+[X][X][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ]
+[X][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ]
 
 
 
