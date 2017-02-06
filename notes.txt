@@ -2769,3 +2769,22 @@ for p in peeps:
 
 		 Queries in pymongo are formatted as documents
 		 	 foo.find( {'age' : 25 } )
+
+	Search criteria can be modified using "$and", "$or", and "$not"
+
+	       foo.find_one( {
+				'$and' : [
+				       { 'name': 'bob' },
+				       { 'age': 25 }
+				 ]} )
+
+
+	Using inequalities in searches
+
+	      $gt, $lt, $gte, $lte, $ne
+
+	      foo.find( {'age' : {'$gte' : 21 }} )
+
+
+		
+		
