@@ -2742,8 +2742,8 @@ Bresenham's Line Algorithm
 
    f(x,y) = 
    	    0: (x,y) is on the line
-	    <0: (x,y) is above the line
-	    >0: (x,y) is below the line
+	    <0: (x,y) is above the line (y is bigger)
+	    >0: (x,y) is below the line	(y is too low (we are plotting x all the time))
 
 SoftDev
 
@@ -2784,6 +2784,18 @@ for p in peeps:
 	      $gt, $lt, $gte, $lte, $ne
 
 	      foo.find( {'age' : {'$gte' : 21 }} )
+
+2/7/17
+Graphics
+
+2 possible pixels: (x+1, y), (x+1, y+1)
+  	   - use midpoint (x+1, y+0.5)
+
+	   f(x+1, y+0.5) =
+	   	  >0: midpt is below the line, plot (x+1, y+1)
+		  <0: midpt is above the line, plot (x+1, y)
+		  0: on the line, pick either, but be consistent
+
 
 
 		
