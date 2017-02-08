@@ -2796,7 +2796,7 @@ Graphics
 		  <0: midpt is above the line, plot (x+1, y)
 		  0: on the line, pick either, but be consistent
 
-	   y = y_0
+	   y = y_0, x = x_0
 	   for x:x_0 -> x_1
 	       plot( x, y)
 
@@ -2816,7 +2816,20 @@ SoftDev
 
 server.db.col.find( { "classes.code": "systems" } )
 
+2/8/17
+Graphics
 
-	   
-		
-		
+More efficient pseudo code:
+
+	   y = y_0, x = x_0
+	   d = f(x+1, y+0.5)
+	   while x <= x_1
+	       plot( x, y)
+
+               if( d > 0 ):
+		     y += 1
+		     d += B (By = B * 1 more)		     
+	       x += 1
+	       d += A (Ax = A * 1 more)
+	
+	
