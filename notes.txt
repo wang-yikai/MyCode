@@ -2868,7 +2868,7 @@ Modifying data
 
 		ex:
 			col.update( {'id': '4' }, {'$set': { 'name':'francis' } } )
-
+			col.update( {'id': '4' }, {'$unset': { 'name':'' } } )
 
 		
 
