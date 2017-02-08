@@ -2866,10 +2866,13 @@ Modifying data
 		"$inc"
 			increment the value of a field
 
+		ex:
+			col.update( {'id': '4' }, {'$set': { 'name':'francis' } } )
+
 
 		
 
-
+		
 
 
 
