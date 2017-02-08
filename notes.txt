@@ -2844,6 +2844,30 @@ SoftDev
 
 Aim: upDAT(A)ing mongo
 
+Modifying data
+	  .delete_one(<QUERY>)
+		deletes the first document that matches the query
+
+	  .delete_many(<QUERY>)
+		Deletes all the documents that match the query
+
+		
+	  .update_one(<QUERY>, <OPERATION>) (similar to update_many)
+	        Updates doc that matches the query
+
+	  	Operation is a document that matches an update operation:
+
+		"$set"
+			change the value of a field
+
+		"$unset"
+			remove a field
+
+		"$inc"
+			increment the value of a field
+
+
+		
 
 
 
