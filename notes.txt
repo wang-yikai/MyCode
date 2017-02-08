@@ -2833,3 +2833,4 @@ More efficient pseudo code:
 	       d += A (Ax = A * 1 more)
 	
 	
+^ ^ ^ For octant I ^ ^ ^
