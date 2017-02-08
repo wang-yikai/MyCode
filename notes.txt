@@ -2822,15 +2822,20 @@ Graphics
 More efficient pseudo code:
 
 	   y = y_0, x = x_0
-	   d = f(x+1, y+0.5)
+	   d = 2A + B (d -> 2d)
 	   while x <= x_1
 	       plot( x, y)
 
                if( d > 0 ):
 		     y += 1
-		     d += B (By = B * 1 more)		     
+		     d += 2B (By = B * 1 more)		     
 	       x += 1
-	       d += A (Ax = A * 1 more)
-	
-	
+	       d += 2A (Ax = A * 1 more)
+
+Why:	
+f(x_0 + 1, y_0 + 0.5)
+Ax_0 + By_0 + C + A + 0.5B -> f(x_0, y_0) + A + 0.5B -> A + 0.5B
+d = A + 0.5B
+d = 2d = 2A + B
+
 ^ ^ ^ For octant I ^ ^ ^
