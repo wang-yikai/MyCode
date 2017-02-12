@@ -1,4 +1,5 @@
 c = 10
+#reset()
 
 def reset():
     global c
