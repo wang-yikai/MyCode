@@ -2876,6 +2876,7 @@ Graphics
 O2:
 d = 2*B + A
 while(y < y1):
+	plot
 	if d < 0:
 	   x+= 1
 	   d+= 2*A
@@ -2886,6 +2887,7 @@ while(y < y1):
 O8:
 d = 2*A - B
 while( x < x1 ):
+       plot
        if d < 0:
        	  y -= 1
 	  d -= 2*B
@@ -2896,6 +2898,7 @@ while( x < x1 ):
 O7:
 d = A - 2*B
 while(y > y1):
+	plot
 	if d > 0:
 	   x += 1
 	   d += 2*A
