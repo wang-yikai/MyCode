@@ -2922,9 +2922,12 @@ Canvas
 HTML5 element that provides a drawing area.
 Javascript functions can draw onto a canvas element
 	You must declare what context you are drawing in
-	FOr example: 2D drawing, 3D drawing, raw bitmap rendering...
+	For example: 2D drawing, 3D drawing, raw bitmap rendering...
 
+ex:
 
+<h1>Canvas Fun!</h1>
+<canvas width="500" height="500" id="slate"></canvas>
 
 
 
