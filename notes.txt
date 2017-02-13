@@ -2907,6 +2907,39 @@ while(y > y1):
 	 d -= 2 *b
 
 
+SoftDev
+Aim: Canvasing the area
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
