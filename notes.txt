@@ -2936,6 +2936,83 @@ ex:
 
 var c = document.getElementById('slate');
 var ctx = c.getContext('2d');
+ctx.fillRect(50, 75, 100, 200);
+ctx.fillStyle='#ff00ff';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
