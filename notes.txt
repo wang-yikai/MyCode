@@ -2870,7 +2870,20 @@ Modifying data
 			col.update( {'id': '4' }, {'$set': { 'name':'francis' } } )
 			col.update( {'id': '4' }, {'$unset': { 'name':'' } } )
 
+2/13/17
+Graphics
 		
+O2:
+d = 2*B + A
+while(y < y1):
+	if d < 0:
+	   x+= 1
+	   d+= 2*A
+
+	y += 1
+	d += 2*B
+
+
 
 		
 
