@@ -2936,7 +2936,7 @@ ex:
 
 var c = document.getElementById('slate');
 var ctx = c.getContext('2d');
-ctx.fillRect(50, 75, 100, 200);
+ctx.fillRect(50, 75, 100, 200); (xcor, ycor, width, height)
 ctx.fillStyle='#ff00ff';
 
 
