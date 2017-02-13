@@ -2883,9 +2883,26 @@ while(y < y1):
 	y += 1
 	d += 2*B
 
+O8:
+d = 2*A - B
+while( x < x1 ):
+       if d < 0:
+       	  y -= 1
+	  d -= 2*B
 
-
+       x += 1
+       d += 2*A
 		
+O7:
+d = A - 2*B
+while(y > y1):
+	if d > 0:
+	   x += 1
+	   d += 2*A
+	  
+	 y -= 1
+	 d -= 2 *b
+
 
 
 
