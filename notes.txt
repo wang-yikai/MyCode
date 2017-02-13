@@ -2925,11 +2925,16 @@ Javascript functions can draw onto a canvas element
 	For example: 2D drawing, 3D drawing, raw bitmap rendering...
 
 ex:
+<style>
+#slate: border: 1px solid black;
+</style>
 
 <h1>Canvas Fun!</h1>
 <canvas width="500" height="500" id="slate"></canvas>
 
+---------------------------------------------------------
 
+var c = document.getElementById('slate');
 
 
 
