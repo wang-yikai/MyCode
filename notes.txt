@@ -2955,6 +2955,13 @@ javascript path functions
 	   A path is considered done when a new beginPath() is called
 
 
+(ctx).moveTo(x,y) -> no lines will be drawn
+(ctx).lineTo(x,y)
+beginPath() -> resets, begin at origin
+closePath() -> results in a line from the current position to the starting position
+
+fill() -> fills the interior of the path, will not work if the path has fewer than 3 points in it
+
 
 
 
