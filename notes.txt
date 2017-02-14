@@ -2962,6 +2962,9 @@ closePath() -> results in a line from the current position to the starting posit
 
 fill() -> fills the interior of the path, will not work if the path has fewer than 3 points in it
 
+arc(X, Y, RADIUS, START, END)
+       Creates an arc path with center (X, Y) with START and END as the defining angles in radians
+
 
 
 
