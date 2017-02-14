@@ -2940,6 +2940,19 @@ ctx.fillRect(50, 75, 100, 200); (xcor, ycor, width, height)
 ctx.fillStyle='#ff00ff';
 ctx.clearRect(200, 75, 100, 200)
 
+2/14/17
+SoftDev
+
+Aim: Your path to success starts here!
+
+javascript path functions
+	   Paths are used to draw arbitrary shapes, including circles and curves
+
+	   A context can keep track of one path at a time
+
+	   The path is not drawn until stroke() is called
+
+	   A path is considered done when a new beginPath() is called
 
 
 
