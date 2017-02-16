@@ -2966,7 +2966,17 @@ arc(X, Y, RADIUS, START, END)
        Creates an arc path with center (X, Y) with START and END as the defining angles in radians. (0, 2 * Math.PI) = circle
 
 
+12/16/17
+Graphics
 
+dilation:
+
+draw_line( 20, 20, 100, 100 ) -> draw_line( 10, 10, 50, 50 )
+
+store lines as points to draw (list of edges)
+[ (20, 20), (100, 100), (50, 75), (300, 220) ]
+ |--------------------|
+	Edge
 
 
 
