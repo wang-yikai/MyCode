@@ -2988,9 +2988,9 @@ Transformations can be applied to the edge list before drawing
 Storing the edge list
 	- Each point has 3 components (X, Y, Z)
 	- Each component should be a floating point
-	       x_0, x_1, x_2, ...
-	       y_0, y_1, y_2, ...
-	       z_0, z_1, z_2, ...
+	     --  x_0, x_1, x_2, ... --
+	     |   y_0, y_1, y_2, ...  | (matrix)
+	     --  z_0, z_1, z_2, ... --
 
 	       will be 4*N
 
