@@ -2994,6 +2994,16 @@ Storing the edge list
 
 	       will be 4*N
 
+	  Scalar multiplication:
+	  	 5[a] = [5a]
+
+	  Matrix multiplication:
+	  	 M * N
+
+		 # of cols in M = # of rows in N
+		 A * B x B * C -> A * C
+
+		 (4 * 4) x (4 * N) = 4 * N
 
 
 
