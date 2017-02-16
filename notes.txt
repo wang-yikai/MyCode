@@ -2978,6 +2978,11 @@ store lines as points to draw (list of edges)
  |--------------------|
 	Edge
 
+Each 2 points in the list will define a single edge
+[ P_0, P_1, P_2, P_3 ... ]
+
+To draw an image, call draw_line with 2 pts from the list at a time
+
 
 
 
