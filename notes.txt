@@ -2983,6 +2983,7 @@ Each 2 points in the list will define a single edge
 
 To draw an image, call draw_line with 2 pts from the list at a time
 
+Transformations can be applied to the edge list before drawing
 
 
 
