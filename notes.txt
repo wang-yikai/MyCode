@@ -3005,10 +3005,19 @@ Storing the edge list
 
 		 (4 * 4) x (4 * N) = 4 * N
 
+SoftDev
+Aim: Let's Get Animated
 
+What we will be using: requestAnimationFrame
 
+Why?
+    requestAnimationFrame tells the browser to run a specified function before drawing the next frame.
 
+    The browser will attempt to run ~60 fps.
 
+    It lets the browser handle when the code should be executed (as opposed to setInterval which is based on specific times).
+
+    It also lets the browser pause animation when a page is not in the foreground.
 
 
 
