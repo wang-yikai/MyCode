@@ -3046,6 +3046,10 @@ I: Always Square (X*X)
 - 0s except along the diagonal
 - 1s along the diagonal
 
+[1 0 0]
+[0 1 0]
+[0 0 1]
+
 
 
 
