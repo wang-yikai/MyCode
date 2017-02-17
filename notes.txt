@@ -2990,9 +2990,10 @@ Storing the edge list
 	- Each component should be a floating point
 	     --  x_0, x_1, x_2, ... --
 	     |   y_0, y_1, y_2, ...  | (matrix)
-	     --  z_0, z_1, z_2, ... --
+	     |   z_0, z_1, z_2, ...  |
+	     --  1.0  1.0  1.0  ... --
 
-	       will be 4*N
+	       will be 4*N (the 1 is for transformations)
 
 	  Scalar multiplication:
 	  	 5[a] = [5a]
@@ -3020,7 +3021,23 @@ Why?
     It also lets the browser pause animation when a page is not in the foreground.
 
 
+2/17/17
+Graphics
 
+Matrix Multiplication
+(A*B)(B*C) = (A*C)
+
+(4*4)(4*N)=(4*N)
+
+X
+Y
+Z
+1
+
+(2*3)   (3*2)
+[A B C]	[g h]      [(Ag+Bi+Ck) (Ah+Bj+Cl)]
+[D E F]	[i j]   =  [(Dg+Ei+Fk) (Dh+Ej+Fl)]
+	[k l]
 
 
 
