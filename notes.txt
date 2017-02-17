@@ -3039,7 +3039,12 @@ Z
 [D E F]	[i j]   =  [(Dg+Ei+Fk) (Dh+Ej+Fl)]
 	[k l]
 
+Multiplicative Identity
+M*I = M = I*M
 
+I: Always Square (X*X)
+- 0s except along the diagonal
+- 1s along the diagonal
 
 
 
