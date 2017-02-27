@@ -2990,10 +2990,9 @@ Storing the edge list
 	- Each component should be a floating point
 	     --  x_0, x_1, x_2, ... --
 	     |   y_0, y_1, y_2, ...  | (matrix)
-	     |   z_0, z_1, z_2, ...  |
-	     --  1.0  1.0  1.0  ... --
+	     --  z_0, z_1, z_2, ... --
 
-	       will be 4*N (the 1 is for transformations)
+	       will be 4*N
 
 	  Scalar multiplication:
 	  	 5[a] = [5a]
@@ -3021,34 +3020,38 @@ Why?
     It also lets the browser pause animation when a page is not in the foreground.
 
 
-2/17/17
-Graphics
+2/27/17
+SoftDev
 
-Matrix Multiplication
-(A*B)(B*C) = (A*C)
+Aim: What's your vector victor?
 
-(4*4)(4*N)=(4*N)
+XML
 
-X
-Y
-Z
-1
+	Extensible Markup Language
 
-(2*3)   (3*2)
-[A B C]	[g h]      [(Ag+Bi+Ck) (Ah+Bj+Cl)]
-[D E F]	[i j]   =  [(Dg+Ei+Fk) (Dh+Ej+Fl)]
-	[k l]
+	It is not a formatting language like (HTML)
 
-Multiplicative Identity
-M*I = M = I*M
+	A framework for creating markup based grammars
 
-I: Always Square (X*X)
-- 0s except along the diagonal
-- 1s along the diagonal
+ex:
+	<person>
+		name: bob
+		id: 32
+	</person>
 
-[1 0 0]
-[0 1 0]
-[0 0 1]
+An XML namespace is defined by the tags and attributes associated with a specific XML language.
+
+The <svg> element is designed to store SVG code (hat is, SVG XML elements)
+<svg xmlns="http://www.w3.org/2000/svg">
+     SVG CODE HERE
+</svg>
+
+xmlns
+	Attribute that identifies the namespace for the specific XML langauge being used.
+
+You have to close tags in xml
+
+
 
 
 
