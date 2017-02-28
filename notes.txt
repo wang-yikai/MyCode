@@ -3019,6 +3019,34 @@ Why?
 
     It also lets the browser pause animation when a page is not in the foreground.
 
+2/17/17
+Graphics
+
+Matrix Multiplication
+(A*B)(B*C) = (A*C)
+
+(4*4)(4*N)=(4*N)
+
+X
+Y
+Z
+1
+
+(2*3)   (3*2)
+[A B C]	[g h]      [(Ag+Bi+Ck) (Ah+Bj+Cl)]
+[D E F]	[i j]   =  [(Dg+Ei+Fk) (Dh+Ej+Fl)]
+	[k l]
+
+Multiplicative Identity
+M*I = M = I*M
+
+I: Always Square (X*X)
+- 0s except along the diagonal
+- 1s along the diagonal
+
+[1 0 0]
+[0 1 0]
+[0 0 1]
 
 2/27/17
 SoftDev
