@@ -3094,23 +3094,57 @@ ex:
 	c.setAttribute("cy", "0");
 	<circle cy="0"></circle>
 
+3/1/17
+Graphics
 
+s = [ a, b, c ]
+x = s
+s[0] = e
+x -> [ e, b, c ]
+(x and s reference the same list)
 
+Transformations:
+	Translation, Scale, Rotation
 
+Translation:
+	(T (a, b, c))
+(x, y, z) -> (x+a, y+b, z+c)
 
+[1 0 0 a]     [x]   [x+a]
+[0 1 0 b]  *  [y] = [y+b]
+[0 0 1 c]     [z]   [z+c]
+[0 0 0 1]     [1]   [1]
 
+Scaling:
+	(S (a, b, c))
+(x, y, z) -> (xa, yb, zc)
 
+[a 0 0 0]     [x]   [xa]
+[0 b 0 0]  *  [y] = [yb]
+[0 0 c 0]     [z]   [zc]
+[0 0 0 1]     [1]   [1]
 
+(will scale with respect to the origin so: T -> S -> T)
 
+Rotation:
 
+|   .(x1, y1)
+|  /
+| /
+|/ (theta)
+|--------- .(x0, y0)     x = rcos(phi) y = rsin(phi)
+----------------------   x1 = rcos(phi + theta) y = rsin(phi + theta)
+	^		      	       	^
+	^	    rcos(theta)cos(phi) - rsin(theta)sin(phi)
+(Z doesnt change)	 x1 = xcos(theta) - ysin(theta)
 
+      R(theta, axis of rotation)
+(x,y) -> (xcos(theta)-ysin(theta), ycos(theta)+xsin(theta))
 
-
-
-
-
-
-
+[cos(theta) -sin(theta) 0 0]     [x]   [xcos(theta)-ysin(theta)]
+[sin(theta) -cos(theta) 0 0]  *  [y] = [ycos(theta)+xsin(theta)]
+[0 0 1 0]     [z]   [z]
+[0 0 0 1]     [1]   [1]
 
 
 
