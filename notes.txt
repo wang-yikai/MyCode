@@ -3142,14 +3142,32 @@ Rotation:
 (x,y) -> (xcos(theta)-ysin(theta), ycos(theta)+xsin(theta))
 
 [cos(theta) -sin(theta) 0 0]     [x]   [xcos(theta)-ysin(theta)]
-[sin(theta) -cos(theta) 0 0]  *  [y] = [ycos(theta)+xsin(theta)]
+[sin(theta) cos(theta) 0 0]  *  [y] = [ycos(theta)+xsin(theta)]
 [0 0 1 0]     [z]   [z]
 [0 0 0 1]     [1]   [1]
 
 
+3/2/17
+Graphics
+
+Rotation Matrices
+R(theta, x)
+(x,y,z) -> (x, ycos(theta)-zsin(theta), zcos(theta)+ysin(theta))
+
+R(theta, y)
+(x,y,z) -> (xcos(theta)+zsin(theta), y, xcos(theta)-zsin(theta))
 
 
+Combining Transformations
+S, T, R, E_0
 
+S*E_0 = E_1
+R*E_1 = E_2
+R*E_2 = E_3
+
+E_3 = T*(R*(S*E_0)) = (T*R*S)*E_0
+			^
+			S->R->T (but the matrix is multiplied T*R first)
 
 
 
