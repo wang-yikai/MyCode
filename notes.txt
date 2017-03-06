@@ -3169,7 +3169,26 @@ E_3 = T*(R*(S*E_0)) = (T*R*S)*E_0
 			^
 			S->R->T (but the matrix is multiplied T*R first)
 
+3/6/17
+SoftDev
 
+Aim: Capturing bubbles
+
+var dot = ...
+dot.addeventlistener("click", 
+return dot
+
+javascript event propagation
+	   
+	   Events initially propagate downward from the top most node in the DOM tree to the target element. Known as event capturing.
+
+	   After an event reaches its target, it then propagates back up the DOM tree. This is known as event bubbling
+
+	   By default, event listeners do not trigger until the bubbling phase.
+
+(Lowest node will fire, then goes back up)
+
+Fix: Add third argument: true)
 
 
 
