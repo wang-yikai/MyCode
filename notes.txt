@@ -3221,7 +3221,7 @@ this = the calling object/document/element currently executing a listener
 ex:
 
 var circleClick = function(e) {
-	console.long("CIRCLE: " + this);
+	console.long("CIRCLE: " + this); -> e.target = object that dispatched the event. Can do if(this == e.target)
 	this.addAttribute("fill", "green");
 	e.stopPropagation(); -> rest of the propagation stops
 };
