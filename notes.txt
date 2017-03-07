@@ -3188,14 +3188,39 @@ javascript event propagation
 
 (Lowest node will fire, then goes back up)
 
-Fix: Add third argument: true)
+Fix: Add third argument: fxn("click", f, true)
+
+3/7/17
+SoftDev
+
+Aim: It's like this and like that and like this...
+
+Event Propagation:
+
+      1. An element intercepts an event
+
+      2. Browser collects DOM node path of the event from the stating element to the root.
+
+      3. Capture: the event propagates down the path from step 2
+
+      4. Bubble: the event propagates up the path from step 2
+
+ex:
+
+Bubbling (default):
+div 3 -> div 2 -> div 1 -> body -> html -> doc
+
+if div 1 = true: (capture)
+div 1 -> div 3 -> div 2
+  ^
+  |
+only set to true for div 1
 
 
-
-
-
-
-
+this = the calling object/document/element currently executing a listener
+ex:
+	console.long("CIRCLE: " + this);
+	this.addAttribute("fill", "green");
 
 
 
