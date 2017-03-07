@@ -3219,8 +3219,13 @@ only set to true for div 1
 
 this = the calling object/document/element currently executing a listener
 ex:
+
+var circleClick = function(e) {
 	console.long("CIRCLE: " + this);
 	this.addAttribute("fill", "green");
+	e.stopPropagation(); -> rest of the propagation stops
+};
+
 
 
 
