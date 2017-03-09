@@ -3226,6 +3226,32 @@ var circleClick = function(e) {
 	e.stopPropagation(); -> rest of the propagation stops
 };
 
+3/9/17
+Graphics
+
+Parametric Equations
+
+Describe curves in such a way that x, y, and z depend on another independent variable (t)
+x = F(t)
+y = G(t)
+z = H(t)
+
+x = x_0 + (deltax)t
+y = y_0 + (deltay)t
+t: 0 -> 1 (might set stop at 1.0001 b/c 1.00 might be 1.0000001)
+
+Circle
+x = rcost + cx (cx = center x)
+y = rsint + cy
+
+rcos(2pi * t) + cx
+rsin(2pi * t) + cy
+
+
+
+
+
+
 
 
 
