@@ -2011,7 +2011,7 @@ SoftDev
 performance.now() -> time to run program
 
 12/20/16
-Systems: 
+Systems:
 
 Aim: Cisco in an hour
 
@@ -2041,20 +2041,20 @@ OSI 7 Layer Model
 		7. Application
 
 	When you work on a particular layer, you don't have to think about the other layers
-	
+
 Physical Layer
 	How computers are physically connected (used copper wires to send high/low voltage, WiFi, bluetooth, cellular data, fiber optics, RFID, satellite ect.)
 
 	Things like electrons running across wires, radio signals pulsing through the air...
 
 	Brief history:
-	
+
 		Thicknet
 			A single coaxial cable runs throughout the network, "vampire taps" go into the cable and leech the data out (cut a hole).
 				ex: [computer]	[computer]	[computer]
 					|		|		|
 				--------------------------------------------------
-		
+
 		Thinnet
 			A single coaxial cable runs throughout the network, T-Junctions used to splice connections
 				ex: [computer]	[computer]	[computer]
@@ -2077,11 +2077,11 @@ Token ring:
 
 	   The network sends a "token" throughout the ring, which contains the identity of the computer allowed
 	   to use the network. All other computers must wait to use the network.
-	   
+
 	   No possibility of collisions.
 
 
-Ethernet:		
+Ethernet:
 	Multiple computers connect to a single hub or switch
 
 	[computer]-	   -[computer]
@@ -2094,7 +2094,7 @@ Ethernet:
 	switch:
 		sends data to a specific computer
 
-	The more computers added to an ethernet network, the greater the chance of collisions 
+	The more computers added to an ethernet network, the greater the chance of collisions
 
 	WiFi: an ethernet hub that uses radio waves
 
@@ -2171,19 +2171,19 @@ Aim: Cisco in an hour V for Vendetta
 
 Network Layer
 	Data is broken into packets (IPv4)
-	
+
 	<header info (2B)><packet length (2B)><fragment info (4B)><time-to-live(1B)><protocol (1B)><header checksum (2B)><source (4B)><destination (4B)><...(4B)><data (20-65,535B)>
 
-	header info: packet type (IPv4/6), header length	
+	header info: packet type (IPv4/6), header length
 
 Data is chopped up into fragments -> fragment info e.g. 3rd fragment of 12
 (network layer is not concerned with matching fragments together)
 
 	 time to live: encode a number of maximum hops (device to device)
 	      	       when packet dies, send response back
-	
+
 	protocol: (helpful for layer 4) TCP/UDP/...
-		       
+
 	unlike ethernet checksum, it is just for the header, NOT data.
 
 	source and destination: IPv4 address, so 4B each
@@ -2232,7 +2232,7 @@ Layer 4: Transport Layer
 
 TCP
 	Transmission Control Protocol
-	
+
 	Reliable connection + guarantees delivery of data
 
 	Data is considered a continuous stream that arrives in the order it is sent (which may not be true in the network layer)
@@ -2243,11 +2243,11 @@ TCP
 		1. Client sends a SYN message to the server
 		2. Server sends the client a SYN_ACK message (acknowledges message)
 		3. Client sends an ACK message to the server
-	
+
 UDP
 	User Datagram Protocol
 
-	Does not require an explicit connection 
+	Does not require an explicit connection
 
 	Data is sent as discrete datagrams with a set size (as opposed to a continuous stream)
 
@@ -2269,10 +2269,10 @@ Remaining layers
 These layers are incorporated into programs that use network connections
 
 Session layer represents end-to-end connections in a program (sockets).
-	
+
 Presentation layer represents how programs package transmitted data.
 	     (APIs are pretty much the presentation layer)
-	     
+
 Application layer represents the programs that users interact with
 	    ex: using a web browser, Spotify, playing a game ect.
 
@@ -2291,14 +2291,14 @@ Sockets - sys/socket.h, sys/types.h
 	3 + 4 will be different for TCP and UDP
 
 	socket <sys/socket.h>
-	       
+
 	       Creates a socket and returns a socket descriptor (int that works like a file descriptor)
 
 	       socket( <domain>, <type>, <protocol> )
 	       	       domain: type of address, IPv4, IPv6...
 		       	       AF_INET: IPv4
 			       AF_INET6: IPv6
-			       
+
 			type: tcp/udp
 			      SOCK_STREAM: tcp
 			      SOCK_DGRAM: udp
@@ -2318,28 +2318,28 @@ Sockets - sys/socket.h, sys/types.h
 
 	     Returns 0 (success) or -1 (failure)
 
-	     A server might bind to any incoming address but only a specific 
+	     A server might bind to any incoming address but only a specific
 	     port, whereas a client would bind to a specific address and port.
- 
+
 		bind( <socket descriptor>, <address>, <address length> )
-		      
+
 		      socket descriptor: return value of socket
-		
+
 		      address: pointer to struct sockaddr_in
-		      	       
+
 			       sin_family: address domain (e.g. AF_NET)
 
-			       sin_addr: 
+			       sin_addr:
 			       		 IP address in binary
-			       		 
+
 					 INADDR_ANY: Any incoming connection
 
 					 inet_aton( <string>, <address variable> )
-					 	    
+
 						    Will convert a string representing an ip address to the correct format and place it in the second parameter
-						    
+
 						    sin_addr.s_addr = INADDR_ANY; //any local ip address
-					 
+
 1/9/17
 Systems
 
@@ -2406,7 +2406,7 @@ accept (server only!!) <sys/socket.h>
 
        A complete socket has 5 important pieces of information, IP address and port # for both client and server, and protocol (tcp/udp)
 
-       Once a client connection gets past listen(), accept creates a new socket with the client information added, and returns a descriptor to the new socket. 
+       Once a client connection gets past listen(), accept creates a new socket with the client information added, and returns a descriptor to the new socket.
        Original socket will still exist (as a listening socket)
 
        accept ( <socket descriptor>, <socket address>, <address length> )
@@ -2424,7 +2424,7 @@ ex:
 
 	struct sockaddr_in sock1;
 	unsigned int socklen = sizeof(sock1);
-	connection = accept( sd, (struct sockaddr *)&sock, &socklen ); 
+	connection = accept( sd, (struct sockaddr *)&sock, &socklen );
 
 
 1/11/17
@@ -2494,7 +2494,7 @@ AJAX
 
 		jquery also has $.get() and $.post() wrappers
 			$.get( <url>, (data), <callback function> );
-			
+
 			ex:
 				$.get( "/foo/", (data), function(d) { console.log(d); });
 
@@ -2519,7 +2519,7 @@ var post = function( e ) {
 		}
 	});
 };
-				
+
 Flask side:
 data = request.args.get(...
 result = ...
@@ -2667,7 +2667,7 @@ display command: display pic.png
 
 for{
 	for {
-	    
+
 	    r
 	    g
 	    b
@@ -2697,7 +2697,7 @@ students = db.students
 
 c = db['students'] #db.students
 
-Databases and collections are not created until a document has been added to 
+Databases and collections are not created until a document has been added to
 them!
 
 students.count() or db.students.count() -> number of documents
@@ -2710,7 +2710,7 @@ To add a document:
       doc = { "name": "bob", "age": 65 }
 
       c.insert_one( doc )
-      
+
       Can insert a list of documents with insert_many()
 
 2/6/17
@@ -2740,7 +2740,7 @@ Bresenham's Line Algorithm
 
    f(x,y) = Ax+By+C
 
-   f(x,y) = 
+   f(x,y) =
    	    0: (x,y) is on the line
 	    <0: (x,y) is above the line (y is bigger)
 	    >0: (x,y) is below the line	(y is too low (we are plotting x all the time))
@@ -2803,9 +2803,9 @@ Graphics
 	       y = y_0
 	       d = f(x+1, y+0.5)
 	       	 if( d > 0 ):
-		     y += 1		     
+		     y += 1
 		 x += 1
-	       
+
 SoftDev
 
 {
@@ -2828,11 +2828,11 @@ More efficient pseudo code:
 
                if( d > 0 ):
 		     y += 1
-		     d += 2B (By = B * 1 more)		     
+		     d += 2B (By = B * 1 more)
 	       x += 1
 	       d += 2A (Ax = A * 1 more)
 
-Why:	
+Why:
 f(x_0 + 1, y_0 + 0.5)
 Ax_0 + By_0 + C + A + 0.5B -> f(x_0, y_0) + A + 0.5B -> A + 0.5B
 d = A + 0.5B
@@ -2851,7 +2851,7 @@ Modifying data
 	  .delete_many(<QUERY>)
 		Deletes all the documents that match the query
 
-		
+
 	  .update_one(<QUERY>, <OPERATION>) (similar to update_many)
 	        Updates doc that matches the query
 
@@ -2872,7 +2872,7 @@ Modifying data
 
 2/13/17
 Graphics
-		
+
 O2:
 d = 2*B + A
 while(y < y1):
@@ -2894,7 +2894,7 @@ while( x < x1 ):
 
        x += 1
        d += 2*A
-		
+
 O7:
 d = A - 2*B
 while(y > y1):
@@ -2902,7 +2902,7 @@ while(y > y1):
 	if d > 0:
 	   x += 1
 	   d += 2*A
-	  
+
 	 y -= 1
 	 d -= 2 *b
 
@@ -3175,11 +3175,11 @@ SoftDev
 Aim: Capturing bubbles
 
 var dot = ...
-dot.addeventlistener("click", 
+dot.addeventlistener("click",
 return dot
 
 javascript event propagation
-	   
+
 	   Events initially propagate downward from the top most node in the DOM tree to the target element. Known as event capturing.
 
 	   After an event reaches its target, it then propagates back up the DOM tree. This is known as event bubbling
@@ -3226,6 +3226,7 @@ var circleClick = function(e) {
 	e.stopPropagation(); -> rest of the propagation stops
 };
 
+
 3/9/17
 Graphics
 
@@ -3248,8 +3249,48 @@ rcos(2pi * t) + cx
 rsin(2pi * t) + cy
 
 
+3/10/17
+Graphics
 
+for t:0 -> 1
+	x = at^3+bt^2+ct+d
+	y = et^3+ft^2+gt+h
 
+Splines
+Hermite curves
+
+goal: at^3 + bt^2 + ct + d
+problem: givens are not coefficients
+
+(have to do twice for x and y)
+
+F(t) = at^3 + bt^2 + ct + d: points on the curve
+F'(t) = 3at^2 + 2bt + c: slopes of each point
+
+When t = 0
+	f(t) = d: initial value of the point (p_0)
+	f'(t) = c: m_0
+
+When t = 1
+	f(t) = a + b + c + d: p_1
+	f'(t) = 3a + 2b + c: m_1
+
+   H	     C     G
+[0 0 0 1]   [a]   [p_0]
+[1 1 1 1] * [b] = [p_1]
+[0 0 1 0]   [c]   [m_0]
+[3 2 1 0]   [d]   [m_1]
+
+H*C = G
+C = H^-1 * G
+
+H^-1
+[2 -2 1 1]
+[-3 3 -2 1]
+[0 0 1 0]
+[1 0 0 0]
+
+[t^3 t^2 t 1] * H^-1 = each point on the curve
 
 
 
