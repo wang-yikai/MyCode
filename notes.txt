@@ -3348,8 +3348,30 @@ Do this for xs and ys
 [1 0 0 0]   [P_3]    [d]
 
 
+SoftDev
 
+Aim: r3d3
 
+d3.js
+	javascript framework designed for working with data
+
+The Basics
+	Include http://d3js.org/d3.v3.min.js in a script tag to use d3 or download the source and link that instead
+
+Selectors
+	Like jquery, you can select DOM elements using d3 functions
+
+	d3.select(<identifier>);
+		returns the first element that matches the given identifier
+
+	d3.selectAll(<identifier>);
+		returns an array of all the elements that amtch the given identifier
+
+Quick way to interact w/ selectors
+      After selecting an element you can set various attributes, like style, text, listeners...
+
+d3.selectALL("p").style("font-size", function () {
+	return Math.floor(Math.random() * 20 + 1) + "px" });
 
 
 
