@@ -3373,7 +3373,8 @@ Quick way to interact w/ selectors
 d3.selectALL("p").style("font-size", function () {
 	return Math.floor(Math.random() * 20 + 1) + "px" });
 
-
+d3.selectAll("p").data([23, 45, 10, 16, 3]); -> binds array to paragraph element
+d3.selectAll("p").style("font-size", function(d) { return d + "px" });
 
 
 
