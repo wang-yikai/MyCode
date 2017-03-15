@@ -3377,6 +3377,57 @@ d3.selectAll("p").data([23, 45, 10, 16, 3]); -> binds array to paragraph element
 d3.selectAll("p").style("font-size", function(d) { return d + "px" }); -> changes font sizes to 23, 45, 10, 16, 3 respectively
 d3.selectAll("p").text(function(d, i) { return d + " " + i  }); -> d = data, i = index
 
+3/15/17
+SoftDev Cont.
+
+Binding data allows us to use it in other d3 calls
+
+Many of the methods that can use anonymous functions allow for parameters to those functions.
+
+The first parameter represents an item in the bound data, and the second represents the index of the item in the data set.
+
+d3.selectAll("p")
+	.style("font-size",
+		function(d) {
+			return d + "px"})
+	.text(function(d, i) {
+		return i});
+
+.enter()
+	ex: var foo= svg.selectAll("circle").data(info).enter(); -> [50, 150, 250, 350 ] -> [ object, object, object, object ]
+	
+	foo.append("circle")
+		.attr("cy", "250" )
+		.attr("r", "40" )
+		.attr("cx", "function(d) {return d;});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
