@@ -3402,6 +3402,13 @@ d3.selectAll("p")
 		.attr("cx", "function(d) {return d;});
 
 
+Now we don't need foo, data already entered
+svg.selectAll("circle").data(info);
+svg.selectAll("circle")
+	.attr("cy", "250" )
+	.attr("r", "40" )
+	.attr("cx", "function(d) {return d;});
+
 
 
 
