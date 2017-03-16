@@ -3409,6 +3409,33 @@ svg.selectAll("circle")
 	.attr("r", "40" )
 	.attr("cx", "function(d) {return d;});
 
+3/16/17
+SoftDev
+
+dyn.selectAll("div")
+	.data(info)
+	.enter() -> create a seperate array of objects (no divs before)
+	.append("div")
+	.style("width", function(d) {
+		return d * 10+ "px"; });
+
+dyn.selectAll("div")
+	(now gets all 6 bars)
+	.text(function(d) { return d; });
+
+info.push(54) -> adds 54 to info
+...
+
+dyn.selectAll("div")
+	.data(info)
+	.enter() -> updates data with new elements
+	.append("div")
+
+
+
+
+
+
 
 
 
