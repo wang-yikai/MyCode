@@ -3431,6 +3431,10 @@ dyn.selectAll("div")
 	.enter() -> updates data with new elements
 	.append("div")
 
+.transition()
+.duration(# in miliseconds) -> optional
+	.style("width", function(d) {
+		return d * 10+ "px"; }); -> becomes animated
 
 
 
