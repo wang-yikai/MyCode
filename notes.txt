@@ -3436,7 +3436,29 @@ dyn.selectAll("div")
 	.style("width", function(d) {
 		return d * 10+ "px"; }); -> becomes animated
 
+3/22/17
+Rectangular Prism
+Given: one vertex, width, height, and depth
+       ^ Give the top left front corner
+height: delta y
+width: delta x
+depth: delta z
 
+x, y, z
+x+w
+y-h
+z-d
+
+Defining points:
+corners (vertices)
+
+Sphere
+Given: center, radius
+
+Rotate a circle x or y axis (not z axis)
+
+Defining points:
+points on the surface
 
 
 
