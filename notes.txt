@@ -3496,7 +3496,7 @@ y rotation     	      	    circle
 theta: 0 - 2pi
 phi: 0 - 2pi
 
-
+To add center to sphere and torus: add cx, cy, cz
 
 
 
