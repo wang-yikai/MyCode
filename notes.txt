@@ -3437,6 +3437,8 @@ dyn.selectAll("div")
 		return d * 10+ "px"; }); -> becomes animated
 
 3/22/17
+Graphics
+
 Rectangular Prism
 Given: one vertex, width, height, and depth
        ^ Give the top left front corner
@@ -3460,6 +3462,39 @@ Rotate a circle x or y axis (not z axis)
 Defining points:
 points on the surface
 
+3/23/17
+Graphics
+
+Sphere
+Generate: just rotate a circle about the x or y axis
+
+x rotation     	      	    circle
+[1 0 0]	       	      	  [rcostheta]	  x[rcostheta]
+[0 cosphi -sinphi]	  [rsintheta]  =  y[rsintheta*cosphi]
+[0 sinphi cosphi]	  [0]	       	  z[rsintheta*cosphi]
+
+theta: 0 - 2pi
+phi: 0 - pi
+
+Using a half-circle (instead of full circle to draw): (can result in hemisphere)
+theta: 0 - pi
+phi: 0 - 2pi
+connecting the dots is easier (dont have to think about the other half)
+
+Torus
+Given: center, circle radius, torus radius
+
+Defining points: on the surface
+
+Generate: Rotate a translated circle about the x/y axis
+
+y rotation     	      	    circle
+[cosphi 0 sinphi]	[rcostheta + R]	  x[cosphi(rcostheta + R)]
+[0 1 0]	  		[rsintheta]  =    y[rsintheta]
+[-sinphi 1 cosphi]	  [0]	       	  z[-sinphi(rcostheta + R)]
+
+theta: 0 - 2pi
+phi: 0 - 2pi
 
 
 
