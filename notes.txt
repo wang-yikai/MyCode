@@ -3498,9 +3498,18 @@ phi: 0 - 2pi
 
 To add center to sphere and torus: add cx, cy, cz
 
+3/24/17
+Graphics
 
+Sphere
+for rotation: 0  - 1
+    for circle: 0 - 1
+    	x = r * cos(circle * PI) + cx
+	y = r * sin(circle * PI) * cos(rotation * 2PI) + cy
+	z = r * sin(circle * PI) * sin( rotation * 2PI) + cz
+...
 
-
+use 2pi instead of pi for torus
 
 
 
