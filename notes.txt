@@ -3469,7 +3469,7 @@ Sphere
 Generate: just rotate a circle about the x or y axis
 
 x rotation     	      	    circle
-[1 0 0]	       	      	  [rcostheta]	  x[rcostheta]
+[1 0 0]	       	  [rcostheta]	  x[rcostheta]
 [0 cosphi -sinphi]	  [rsintheta]  =  y[rsintheta*cosphi]
 [0 sinphi cosphi]	  [0]	       	  z[rsintheta*cosphi]
 
@@ -3487,10 +3487,12 @@ Given: center, circle radius, torus radius
 Defining points: on the surface
 
 Generate: Rotate a translated circle about the x/y axis
+phi = rotation
+theta = circle
 
-y rotation     	      	    circle
+y rotation     	      	    torus
 [cosphi 0 sinphi]	[rcostheta + R]	  x[cosphi(rcostheta + R)]
-[0 1 0]	  		[rsintheta]  =    y[rsintheta]
+[0 1 0]	  	[rsintheta]  	=    y[rsintheta]
 [-sinphi 1 cosphi]	  [0]	       	  z[-sinphi(rcostheta + R)]
 
 theta: 0 - 2pi
