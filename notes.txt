@@ -3530,6 +3530,36 @@ for i = 0; i <= n; i += 1
     x = rcos(2pit)
 
 
+3/30/17
+Graphics
+
+Wireframe Meshes
+
+  Defining points are connected by lines
+
+  Can easily create lines from generated points
+
+  lines stored in edge list (directly translateable)
+
+  Connecting points may be complicated
+
+  Doesn't have a lot of surface (difficult to fill it in to create a solid object)
+
+
+Polygon Meshes
+
+   Defining points are used as vertices for polygons (triangles)
+
+   Can fill in each polygon
+
+   Lighting and shading can be seen
+
+   Generating polygons are be difficult
+
+   Need to store polygons (not edges) [ triangle_0 { p0, p1, p2 }, triangle_1 { p3, p4, p5 } ]
+
+   Generally more computationally intensive
+
 
 
 
