@@ -3562,7 +3562,12 @@ Polygon Meshes
 
 
 
+add_box
+add_sphere
+add_torus
+	Add 3 points at a time to a polygon list
 
+	MUST add points counter-clockwise
 
 
 
