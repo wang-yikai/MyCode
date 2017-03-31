@@ -3569,6 +3569,21 @@ add_torus
 
 	MUST add points counter-clockwise
 
+3/31/17
+Graphics
+
+How many points per slice? -> 11
+Semi-circles or regular circles? -> semi
+
+point i
+      i + 1 (longitude)
+      i + 11 -> n (# of points per slice) (latitutde)
+      i + 12 -> n + 1
+
+
+
+
+
 
 
 
