@@ -3680,6 +3680,9 @@ List Comprehensions
 		ex:
 		[ x*x for x in range(10) if x % 2 == 1 ]
 
+		ternary operator (ex):
+		[ x if x % 2 == 1 else 0 for x in range(10) ]
+
 
 
 
