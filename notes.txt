@@ -3657,7 +3657,7 @@ Relative Coordinate System
 
 Stacks -> a tree is also good (ex: body -> head
 4				    |
-3				    uppder arm
+3				    upper arm
 2				    |
 1				    lower arm
 0
