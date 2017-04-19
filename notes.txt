@@ -3662,6 +3662,16 @@ Stacks -> a tree is also good (ex: body -> head
 1				    lower arm
 0
 
+SoftDev
+
+Aim: Lists, comprendo?
+
+
+
+
+
+
+
 
 
 
