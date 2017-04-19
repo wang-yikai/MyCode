@@ -3676,6 +3676,11 @@ List Comprehensions
 		[ x for x in range(10) ] -> range(10)
 		[ {x: x*x} for x in range(10) ] -> [{0: 0}, {1: 1}, {2: 4}, {3: 9} ... ]
 
+	Conditional comprehensions
+		ex:
+		[ x*x for x in range(10) if x % 2 == 1 ]
+
+
 
 
 
