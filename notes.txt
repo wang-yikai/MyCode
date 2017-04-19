@@ -3673,6 +3673,8 @@ List Comprehensions
 
 	ex:
 		[ 5 for x in range(10) ] -> list of 10 5's
+		[ x for x in range(10) ] -> range(10)
+
 
 
 
