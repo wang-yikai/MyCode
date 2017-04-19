@@ -3666,6 +3666,11 @@ SoftDev
 
 Aim: Lists, comprendo?
 
+List Comprehensions
+	Programming construct for building lists out of existing lists
+
+	[ <value> for <var> in <list> ]
+
 
 
 
