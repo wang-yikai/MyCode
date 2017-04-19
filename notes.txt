@@ -3620,9 +3620,47 @@ n = <aybz-azby, azbx-axbz, axby-aybx>
 
 3) if -90 deg < theta < 90, draw surface (else: skip)
 
+4/19/17
+Graphics
+
+Translation
+[0 0 0 20]
+[0 0 0 50]
+[0 0 0 0 ]
+[0 0 0 1 ]
+
+Scaling
+[2 0 0 0]
+[0 3 0 0]
+[0 0 1 0]
+[0 0 0 1]
+
+Scale then translate
+[2 0 0 40]
+[0 3 0 150]
+[0 0 1 0]
+[0 0 0 1]
+
+Relative Coordinate System
+	Transformations modify the coordinate system
+
+	When drawing, we apply the current transformation
+
+	Each object can be independently drawn
+
+	We can explicitly define related objects
+
+    [1]
+[2][ 0 ][4]
+[3]     [ ]
 
 
-
+Stacks -> a tree is also good (ex: body -> head
+4				    |
+3				    uppder arm
+2				    |
+1				    lower arm
+0
 
 
 
