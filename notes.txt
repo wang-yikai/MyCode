@@ -3685,6 +3685,24 @@ List Comprehensions
 		[ x if x % 2 == 1 else 0 for x in range(10) if x*x > 30] -> [0, 49, 0, 81]
 
 
+4/20/17
+Graphics
+
+Relative Coordinate System
+
+Maintain a stack of coordinate systems
+	push: add a FULL(not a reference) copy of the top to the stack
+	pop
+
+All transformations are immediately applied to the top of the stack
+Drawing commands do the following:
+	1. Generate a polygon list
+	2. Apply the top coordinate system
+	3. Draw to the screen
+	4. clear the polygon list
+
+
+
 
 
 
