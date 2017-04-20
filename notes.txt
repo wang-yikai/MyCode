@@ -3726,6 +3726,8 @@ x y z r			I * M_0			transformations are done before here
 pop			I*M_0
 			I
 
+save and display just save and display respectively
+
 
 
 
