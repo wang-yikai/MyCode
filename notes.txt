@@ -3701,8 +3701,30 @@ Drawing commands do the following:
 	3. Draw to the screen
 	4. clear the polygon list
 
-
-
+command			stack			image
+push			identity matrix		[.  ] (blank, origin normal (bottom left))
+			identitiy matrix					
+-------------------------------------------------------------------
+move			identity matrix * move	blank, origin xyz
+x y z			identity matrix
+-------------------------------------------------------------------
+box			I * M_0			box with origin xyz
+x y z w h d		I
+-------------------------------------------------------------------
+push			I * M_0			box with origin xyz
+			I * M_0
+			I
+-------------------------------------------------------------------
+move			I * M_0 * M_1		box with origin above (for head)
+x y z			I * M_0			
+			I
+-------------------------------------------------------------------
+sphere			I * M_0 * M_1		box, sphere, origin at center of sphere
+x y z r			I * M_0			transformations are done before here
+			I
+-------------------------------------------------------------------
+pop			I*M_0
+			I
 
 
 
