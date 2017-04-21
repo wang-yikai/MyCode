@@ -3728,6 +3728,15 @@ pop			I*M_0
 
 save and display just save and display respectively
 
+SoftDev
+
+Solution:
+	[ y for x in range(2, 10) for y in range(2*x, 101, x) ] -> has some repeated numbers
+
+My way lol:
+	[ x for x in range(2, 101) if ((x%2 == 0) or (x%3 == 0) or (x%5 == 0) or (x%7 == 0 ) or (x%11 == 0)) and x not in [2,3,5,7,11] ]
+
+
 
 
 
