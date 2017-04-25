@@ -3798,6 +3798,10 @@ def repeat( s ):
     	return s * x
     return times
 
+-> same as:
+def repeat(s):
+    return lambda x: s * x 
+
 repeat("hello ")(3) -> "hello hello hello "
  
 
