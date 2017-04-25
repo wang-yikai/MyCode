@@ -3772,6 +3772,17 @@ pop (pop 2x for lower and upper left arm)
 pop
 pop (pop 2x for lower and upper right arm)
 
+SoftDev
+
+Dictionary comprehension:
+{ x: x*x for x in range(10) } -> {0:0, 1:1, 2:4, 3:9, ... }
+{ x*x for x in range(10) } -> set([0, 1, 4, ... ] )
+
+Set comprehension:
+s = "badpassword"
+{ c for c in s } -> set([ "a", "b", "d", "o", "p", "s", "r", "w" ])
+   ->no duplicates in set<- 
+
 
 
 
