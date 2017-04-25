@@ -3798,7 +3798,8 @@ def repeat( s ):
     	return s * x
     return times
 
-
+repeat("hello ")(3) -> "hello hello hello "
+ 
 
 
 
