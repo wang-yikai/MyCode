@@ -3783,6 +3783,22 @@ s = "badpassword"
 { c for c in s } -> set([ "a", "b", "d", "o", "p", "s", "r", "w" ])
    ->no duplicates in set<- 
 
+Aim: let's get some closure (not Clojure).
+
+Closures
+	1. A function is declared inside another function
+	2. The inner function accesses a variable from the other function
+	   (outside the local scope of the inner function)
+	3. The external function binds a value to the variable and finishes
+	   (or closes) before the inner function can be completed.
+
+NOT a closue (only a setup for closure):
+def repeat( s ):
+    def times( x ):
+    	return s * x
+    return times
+
+
 
 
 
