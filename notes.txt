@@ -3832,6 +3832,12 @@ def quicksort(l):
 
 	return quicksort(lower) + (l.count(pivot) * [pivot]) + quicksort(upper)
 
+f= c.header(c.farewell) -> '<hr><h1>Sup?..."
+
+def header(f):
+	 def inner():
+		return "<hr><h1>" + str(f) + ...
+	return inner
 
 
 
