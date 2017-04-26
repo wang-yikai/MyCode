@@ -3840,7 +3840,7 @@ def header(f):
 	return inner
 
 "@" - deocrators
-send this fxn through thi closure apparatus and rename it
+send this fxn through the closure apparatus and rename it
 
 
 
