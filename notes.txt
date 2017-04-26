@@ -3803,8 +3803,20 @@ def repeat(s):
     return lambda x: s * x 
 
 repeat("hello ")(3) -> "hello hello hello "
- 
 
+Example:
+	import closure as c
+	c.repeat -> <function repeat...
+
+	NOT a closure until:
+	f = c.repeat("yo ")
+
+	f -> <function times...
+
+	g = c.repeat("col")
+	g(4) -> "colcolcolcol"
+
+times is out of the scope
 
 
 
