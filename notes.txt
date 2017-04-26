@@ -3822,6 +3822,16 @@ if used lambda:
 	<function <lambda> at... 
                       ^ becomes anonymous function
 
+def quicksort(l):
+	if len(l) <= 1:
+		return l
+	
+	pivot = random.choice(l)
+	lower = [i for i in l if i < pivot]
+	upper = [i for i in l if i > pivot]
+
+	return quicksort(lower) + (l.count(pivot) * [pivot]) + quicksort(upper)
+
 
 
 
