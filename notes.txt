@@ -3842,10 +3842,52 @@ def header(f):
 "@" - deocrators
 send this fxn through the closure apparatus and rename it
 
+4/27/17
+Graphics
 
+Compiler
+	Made up of 5 different text processors
+	
+	1. lexer -> 2. parser -> 3. semantic analyzer -> 4. optimizer -> 5. code generator
+	-> machine code
 
+Lexer:
+	match your code with known pieces of the language
+	
+	performs lexical analysis - identifies language tokens (not words, but keywords and literals) present in the source code
 
+	Comments and unecessary spaces are thrown out.
+	Catches unknown keywords and symbols (invalid tokens)
 
+	input: source code
+	Output: token list -> retains order of the code but generates list of the tokens
+	
+	ex:
+	int main() {
+	    long x = 5 + 6;
+	    printf("%d", x);
+	    return 5;
+	    }
+	
+	becomes:
+	int
+	main
+	(
+	)
+	{
+	long
+	x - identifier
+	=
+	5
+	+
+	...
+
+Parser:
+	performs syntax analysis -> catches missing semicolons, parens, etc.	
+	knows the grammar of the language
+	
+	input: token list
+	output: creates syntax tree
 
 
 
