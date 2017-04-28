@@ -3940,7 +3940,10 @@ Code Generator
 
 	ex: output = 100101001010110...
 
-	
+What compilers should do:
+1. Describe tokens
+2. Describe grammar
+3. Map operations list to code	
 
 		
 
