@@ -3870,8 +3870,8 @@ Lexer:
 	    }
 	
 	becomes:
-	int
-	main
+	int - keyword
+	main - identifier
 	(
 	)
 	{
@@ -3888,6 +3888,76 @@ Parser:
 	
 	input: token list
 	output: creates syntax tree
+
+4/28/17
+Graphics
+
+token list -> linked list seems good to have
+
+Parser knows grammar: int must have an identifier or ) (typecast) after
+
+Syntax Tree
+		   int
+		    |
+	 	   main
+		/    |      \
+	     =	   printf  return
+	   /   \     /\	     |
+	long	+ "%d" x     8
+	  |    / \	     
+	  x   5   6
+
+However, the parse doesn't care if returns 8.5 even though function should return int
+
+Semantic Analyzer
+	Knows how tokens should be combined
+	can map syntax tree to actual operations and values
+
+	input: syntax tree
+	output: operations list and symbol table (list of all variables)
+
+Operation list		Symbol table
++: 5, 6			main	int
+=: x^		-->	  x	long
+printf has x reference	printf	void
+return: 8 -> checks if return type matches
+
+	Might give warnings for unused variables (might be thrown out by otpimizer)
+
+
+Optimizers
+	might not package some stuff, replace code, do stuff on the fly, swap variables, use for loop instead of counter, ect.
+
+	C, Java, Python interpreter, use it b/c of speed, but compilers might not have it
+
+Code Generator
+	Runtime errors are already caught
+	What does the actual operations: turns list of operations to executable code
+
+	Goes through the operation list and symbol table and creates machine code instructions
+
+	Might be assembly code then to binary
+
+	ex: output = 100101001010110...
+
+	
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
