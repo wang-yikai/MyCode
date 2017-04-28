@@ -3918,7 +3918,7 @@ Semantic Analyzer
 
 Operation list		Symbol table
 +: 5, 6			main	int
-=: x^		-->	  x	long
+=: x^		-->	  x	long (looks up in hash table/symbol table)
 printf has x reference	printf	void
 return: 8 -> checks if return type matches
 
