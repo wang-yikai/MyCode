@@ -3946,6 +3946,23 @@ What compilers should do:
 3. Map operations list to code	
 
 		
+5/1/17
+Graphics
+
+Things to design before writing a compiler:
+       Valid tokens
+       Language structure (syntax/grammar)
+       How to apply tokens
+       How to map operations to machine code
+       
+MDL: Motion Description Language
+     
+Compiler Tools:
+	 lex -> creates a lexer if you give it a token list
+	 yacc -> creates a parser and semantic analyzer (yet another c/compiler compiler)
+	 
+	 Flex -> open source      
+       	 bison -> open source / javacc / lex.py / yacc.py
 
 
 
