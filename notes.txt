@@ -3964,6 +3964,33 @@ Compiler Tools:
 	 Flex -> open source      
        	 bison -> open source / javacc / lex.py / yacc.py
 
+SoftDev
+
+*arg
+arg: tuple
+     arg[0], arg[1]
+
+**kwargs
+keyword arguments
+
+def print_keyword_args(**kwargs):
+...     # kwargs is a dict of the keyword args passed to the function
+...     for key, value in kwargs.iteritems():
+...         print "%s = %s" % (key, value)
+... 
+>>> print_keyword_args(first_name="John", last_name="Doe")
+first_name = John
+last_name = Doe
+
+>>> kwargs = {'first_name': 'Bobby', 'last_name': 'Smith'}
+>>> print_keyword_args(**kwargs)
+first_name = Bobby
+last_name = Smith
+
+
+
+
+
 
 
 
