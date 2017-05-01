@@ -3992,9 +3992,23 @@ Aim: Functioning tools
 No functional programming toolbox would be complete without the following concepts:
 Memoization, Map, Filter, Reduce
 
+Memoization:
+	Reducing the time it takes to complete an (often recursive) algorithm by saving previously computed values to be used later
 
+	Can be easily created using decorators
 
+	Ex: fibonacci sequence
 
+	Calculate and save the value for use when picked up again, can be dealt with a dctionary.
+
+ex:
+	def memoize(f):
+	    vals = {}
+	    def inner(*arg):
+	    	if arg[0] not in vals:
+		   vals[arg[0]] = f(*arg)
+		return vals[arg[0]]
+	    return inner
 
 
 
