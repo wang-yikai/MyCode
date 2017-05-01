@@ -3987,6 +3987,10 @@ last_name = Doe
 first_name = Bobby
 last_name = Smith
 
+Aim: Functioning tools
+
+No functional programming toolbox would be complete without the following concepts:
+Memoization, Map, Filter, Reduce
 
 
 
