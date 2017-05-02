@@ -4023,6 +4023,42 @@ ID [a-zA-Z][a-zA-Z0-9_]* = one of a-z or A-Z letter + at least one of a-z, A-Z, 
 atof = alpha numeric to floating point
 
 
+SoftDev
+
+Map/Filter/Reduce
+
+	The holy trinity of list processing
+
+	Reduce
+		Compute some value based on a list (i.e. reducing the list to a single value)
+
+		reduce(<FUNCTION>, <LIST>)
+			The <FUNCTION> must take 2 arguments
+		
+			Ex: add(a,b) return a + b;
+				reduce(add, list) = sum(list)
+
+			[2, 5, -10, 21]
+			reduce(lambda a, b: a + b, l)
+				1. a = 2, b = 5
+				2. a = 7, b = -10
+				3. a = -3, b = 21
+				4. a = 18
+
+		map(<FUNCTION>, <LIST>)
+			makes a new list by applying the function to each element in the list
+	
+			ex:
+				map(lambda x: x*2, l) -> new list with each element *= 2
+
+		filter(<FUNCTION>, <LIST>)
+			ex:
+				filter(lambda x: x%2 == 1, l) -> only odd numbers in new list
+				
+
+		
+
+
 
 
 
