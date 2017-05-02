@@ -4010,6 +4010,17 @@ ex:
 		return vals[arg[0]]
 	    return inner
 
+5/2/17
+Graphics
+
+C code:
+ID [a-zA-Z][a-zA-Z0-9_]* = one of a-z or A-Z letter + at least one of a-z, A-Z, 0-9, and _
+
+%%
+...
+\-?[0-9]+ | = 0 or more +- numbers 0-9
+
+atof = alpha numeric to floating point
 
 
 
