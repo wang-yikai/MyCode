@@ -4010,59 +4010,37 @@ ex:
 		return vals[arg[0]]
 	    return inner
 
-5/2/17
+
+5/9/17
 Graphics
 
-C code:
-ID [a-zA-Z][a-zA-Z0-9_]* = one of a-z or A-Z letter + at least one of a-z, A-Z, 0-9, and _
+move 100 0 0 k
+     	     0
+	     .25
+	     .50
+	     .75
+	     1
 
-%%
-...
-\-?[0-9]+ | = 0 or more +- numbers 0-9
+all knobs (k) can change their value over the course of given frames
 
-atof = alpha numeric to floating point
+frames 50
+       how many frames we want to make (50 frames, yes I want to generate an animation)
 
-r"//.*" -> literal string, backslash = literal, not escape characters
-u -> unicode
+basename simple
+	 name of the file before you append the number (e.g. simple000.png, simple001.png, ect.)
 
+vary spinny 0 49 0 1
+     spinny will vary from frame 0 to frame 49 and from 0 at frame 0 to 1 at frame 49
 
-SoftDev
+2 ways to generate animations:
 
-Map/Filter/Reduce
+1: won't make a gif
+	animate anim/simple0* -> stitch images together in anim folder
+	animate -delay n anim/simple0* -> n/100 second delay between frames (default n = 1)
 
-	The holy trinity of list processing
-
-	Reduce
-		Compute some value based on a list (i.e. reducing the list to a single value)
-
-		reduce(<FUNCTION>, <LIST>)
-			The <FUNCTION> must take 2 arguments
-		
-			Ex: add(a,b) return a + b;
-				reduce(add, list) = sum(list)
-
-			[2, 5, -10, 21]
-			reduce(lambda a, b: a + b, l)
-				1. a = 2, b = 5
-				2. a = 7, b = -10
-				3. a = -3, b = 21
-				4. a = 18
-
-		map(<FUNCTION>, <LIST>)
-			makes a new list by applying the function to each element in the list
-	
-			ex:
-				map(lambda x: x*2, l) -> new list with each element *= 2
-
-		filter(<FUNCTION>, <LIST>)
-			ex:
-				filter(lambda x: x%2 == 1, l) -> only odd numbers in new list
-				
-
-		
-
-
-
+2: will make a gif, NEEDS .gif EXTENSION
+	convert anim/simple0* simple.gif -> stitch images together in anim folder
+	convert -delay n anim/simple0* simple.gif -> n/100 second delay between frames (default n = 1)
 
 
 
