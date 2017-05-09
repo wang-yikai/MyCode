@@ -4042,6 +4042,13 @@ vary spinny 0 49 0 1
 	convert anim/simple0* simple.gif -> stitch images together in anim folder
 	convert -delay n anim/simple0* simple.gif -> n/100 second delay between frames (default n = 1)
 
+Possible errors to catch:
+	 knob present without vary
+	 vary knob that isnt used
+	 vary frame range is invalid
+	 using vary w/o frames
+	 no basename
+	 doubling frames or basename
 
 
 
