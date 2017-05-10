@@ -4048,6 +4048,58 @@ Possible errors to catch:
 	 no basename
 	 doubling frames or basename
 
+5/10/17
+Graphics
+
+Animation in MDL:
+	New mdl commands: frames, basename, vary
+
+Symbol Table:
+	Hash table
+	keys: symbol names
+	values: type and value
+	C: struct
+	Python: list
+	type: knob, coordinate system type, and lighting type
+
+bigenator: [knob; NULL]
+
+if operation is move, get x,y,z factors
+	if knob is used, get knob value
+			 scale x,yz,
+
+Pass 1: setup
+	Look for frames and basename and set both
+	If vary is used by frames is not, exit -> print error
+	If frames is used, but basename is not, not really an error -> set default basename
+
+Pass 2: working with vary (if # of frames > 1)
+	Generating all the knob values for each frame	
+	Check for invalid vary range and exit if found
+	Need to store the knob values in some structure
+	List of frames, each frame will store knob names and values
+
+[0] -> big: 0, spin: 0
+[1] -> big: 0.1, spin: 0.1	
+...
+
+Pass 3: drawing
+	for each frame: set symbol table values (from list of frames)
+			normal drawing: if a knob is present, lookup value and apply it
+					at the end of the commands, save the frame
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
