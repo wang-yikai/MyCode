@@ -4089,9 +4089,26 @@ Pass 3: drawing
 					at the end of the commands, save the frame
 
 
+5/22/17
+Graphics
 
+Filling polygons and removing hidden surfaces
 
+Take a triangle:
+		
 
+   /\		Method 1: use scaling
+  /  \		Method 2: use a box, check if the point is in the triangle (above or below the line).
+ /    \		Method 3: find a vertex, draw line to the oppsite side (but revisitng pixels).
+/______\
+
+But a similar method:
+	Start at the bottom, use horizontal lines with y values + 1 each time. DRAWING ROWS
+	called:
+
+Scanline Conversion
+
+Removing hidden surfaces: Z buffering
 
 
 
