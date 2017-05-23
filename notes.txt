@@ -4111,7 +4111,29 @@ Scanline Conversion
 Removing hidden surfaces: Z buffering
 
 
+5/23/17
+Graphics
 
+Scanline Conversion:
+	 Fill a triangle by drawing consecutive horizontal lines from the bottom to the top
+	 
+	 1. Need to know Top, Bottom, and Middle
+	 2. y: bottom y (By) to the top y (Ty)
+	    deltaY = 1
+	 3. x_0: Bx -> Tx
+	    deltaX_0 = (Tx - Bx)/(Ty - By)
+
+	    x_1: Bx -> Mx
+	    	 deltaX_1 = (Mx - Bx)/(My - By)
+
+	    	 Mx -> Tx: if y >= My
+		 deltaX_1 = (Tx - Mx)/(Ty - My)
+
+		 Be careful about dividing by zero!
+
+	    No Special Cases
+
+	
 
 
 
