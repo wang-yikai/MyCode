@@ -4131,10 +4131,17 @@ Scanline Conversion:
 
 		 Be careful about dividing by zero!
 
+		 draw_polygon:
+			for each traingle
+			    get_normal
+			    if normal > 0:
+			       draw_line 3x then scanline or just scanline
+
+
 	    No Special Cases
 
 	
-
+		
 
 
 
