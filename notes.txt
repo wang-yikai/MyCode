@@ -4141,15 +4141,26 @@ Scanline Conversion:
 	    No Special Cases
 
 	
-		
+5/26/17
+Graphics		
 
+Z-buffering:
+	Comparing Z values and drawing with larger Z values (depth)
 
+	Store the Z values in a 2D array called the Z-buffer
+	   Screen   	   Z buffer
+	[ ][ ][ ][ ]	 [ ][  ][  ][  ]    
+	[ ][B][B][ ]	 [ ][15][15][  ]
+	[ ][B][R][R]	 [ ][15][32][32]
+	[ ][ ][R][R]	 [ ][  ][32][32]
 
+	Initialize Z-buffer with smallest possible value
+		Python:
+			-float("inf")
 
-
-
-
-
+	Modify plot() to account for Z-buffer
+	Modify draw_line() to calculate Z values
+	       Distance of line, 		
 
 
 
