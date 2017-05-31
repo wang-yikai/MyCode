@@ -4162,10 +4162,36 @@ Z-buffering:
 	Modify draw_line() to calculate Z values
 	       Distance of line, 		
 
+5/31/17
+Graphics
 
+Lighting and Shading:
+Color is determined by
+      1. Reflective properties of an object
+      2. Color of the light
 
+2 kinds of light sources
+      1. Ambient light: has no specific source and hits all objects evenly
+      2. Point light sources: e.g. flashlight on object
 
+3 Types of Reflection
+      Ambient, Diffuse, Specular
 
+      I: color variable (illumination)
+      Lighting equation
+      	       I = I_ambient + I_diffuse + I_specular
+	       There will be Ir, Ig, Ib (else greyscale)
+
+      constants white 0.25 0.5 0.25 0.25 0.5 0.25 0.25 0.5 0.25
+      		order:  ambient diffuse specular (sum of them are from 0-1) x3 for red, green, blue
+		
+		ambient gives no depth (how much background light we want to reflect), rays from everywhere
+		diffuse comes from source but reflected evenly (in dull-looking objects)
+		specular reflects point source in a particular direction (very shiny)
+			 strength based on relationship to the light itself 
+			 (mirror, reflects back where it came from)
+		   	   
+      
 
 
 
