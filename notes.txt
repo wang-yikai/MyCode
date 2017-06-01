@@ -4192,8 +4192,50 @@ Color is determined by
 			 (mirror, reflects back where it came from)
 		   	   
       
+6/1/17
+Graphics
 
+Ambient:
+	A: ambient light color (0-255)
+	K_a: constant of ambient reflection (0-1)
 
+	I_ambient = A*K_a
+
+Diffuse reflection (matte):
+	L: point light source
+	   <x, y, z>, (0-255)
+
+	K_d: constant of diffuse reflection (0-1)
+	Light is reflected evenly in all directions (rough surface under microscope)
+
+	\<L>  	 |<N>	   Reflection is brightest when theta is 0
+	 \       |	   I_diffuse = L * K_d * cos(theta)
+	  \      |	     	     = L*K_d * (<N> . <L>), <N> and <L> must be unit vectors
+	   \theta|		     
+	    \	 |         <N> = < (nx)/||N||, (ny)/||N||, (nz)/||N|| > (||N|| = magnitude)
+	     \	 |	   ||N|| = sqrt( (nx)^2 + (ny)^2 + (nz)^2 )
+	      \	 |
+	      \\\| ///<R>
+	       -\|/-
+	__________________
+	
+Specular Reflection (glossy):
+	L: point light source
+	   <x, y, z>, (0-255)
+
+	K_s: constant of diffuse reflection (0-1)
+	Light is reflected more strongly in one direction
+
+	\<L>  	 |<N>	  /<R> 		 I_specular = L * K_s * cos(alpha)
+	 \--<P>--|--<P>--/  		 	    = L * K_s * (<R> . <V>)
+	  \      |	/     /<V> 
+	   \theta|     /     /		     <P> = <N> * (<N> . <L>)
+	    \	 |    /     /    	     <R> = 2 * <P> - <L>
+	     \	 |   /	   /   
+	      \	 |  /alpha/
+	       \ | /     /
+	        \|/     /
+	_____________________
 
 
 
