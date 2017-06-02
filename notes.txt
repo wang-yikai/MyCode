@@ -4266,7 +4266,9 @@ Specular Reflection (Cont.):
 				   = [ 2<N>(<N> . <L>) - <L> ] . <V>
 				   
 			I_specular = L*K_s*[ 2<N>(<N> . <L>) - <L> ] . <V> ]^e     
-			e is to model the quick degredation of the reflection
+			e is to model the quick degredation of the reflection 
+			  (how strong the reflection to look/die off)
+			  Larger the exponent, the bigger the reflection
 
 
 
