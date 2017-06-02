@@ -4195,6 +4195,9 @@ Color is determined by
 6/1/17
 Graphics
 
+<> = vector
+. = dot product
+
 Ambient:
 	A: ambient light color (0-255)
 	K_a: constant of ambient reflection (0-1)
@@ -4208,13 +4211,13 @@ Diffuse reflection (matte):
 	K_d: constant of diffuse reflection (0-1)
 	Light is reflected evenly in all directions (rough surface under microscope)
 
-	\<L>  	 |<N>	   Reflection is brightest when theta is 0
+	^<L>  	 ^<N>	   Reflection is brightest when theta is 0
 	 \       |	   I_diffuse = L * K_d * cos(theta)
 	  \      |	     	     = L*K_d * (<N> . <L>), <N> and <L> must be unit vectors
 	   \theta|		     
 	    \	 |         <N> = < (nx)/||N||, (ny)/||N||, (nz)/||N|| > (||N|| = magnitude)
 	     \	 |	   ||N|| = sqrt( (nx)^2 + (ny)^2 + (nz)^2 )
-	      \	 |
+	     ^\	 |  ^^^
 	      \\\| ///<R>
 	       -\|/-
 	__________________
@@ -4226,19 +4229,44 @@ Specular Reflection (glossy):
 	K_s: constant of diffuse reflection (0-1)
 	Light is reflected more strongly in one direction
 
-	\<L>  	 |<N>	  /<R> 		 I_specular = L * K_s * cos(alpha)
-	 \--<P>--|--<P>--/  		 	    = L * K_s * (<R> . <V>)
-	  \      |	/     /<V> 
-	   \theta|     /     /		     <P> = <N> * (<N> . <L>)
-	    \	 |    /     /    	     <R> = 2 * <P> - <L>
-	     \	 |   /	   /   
-	      \	 |  /alpha/
+	  	 ^<N> 		 I_specular = L * K_s * cos(alpha)
+	^<L>	 ^<P>-<S>-^<R>  	    = L * K_s * (<R> . <V>)
+	 \       |	 /     ^<V> 
+	  \theta |      /     /		     <P> = <N> * (<N> . <L>)
+	   \	 |     /     /    	     <R> = 2 * <P> - <L>
+	    \	 |    /	    /   
+	     \	 |   /alpha/
+	      \  |  /     /
 	       \ | /     /
-	        \|/     /
 	_____________________
 
+6/2/17
+Graphics
 
+Specular Reflection (Cont.):
+	L: point light source
+	   <x, y, z>, (0-255)
 
+	K_s: constant of diffuse reflection (0-1)
+	Light is reflected more strongly in one direction
+
+	  	 ^<N>	  		 I_specular = L * K_s * cos(alpha)
+	^<L>	 ^<P>-<S>-^<R>   		    = L * K_s * (<R> . <V>)
+	 \       |	 /     ^<V> 
+	  \theta |      /     /		     <P> = <N> * (<N> . <L>)
+	   \	 |     /     /    	     <R> = 2 * <P> - <L>
+	    \	 |    /	    /    	     <R> = <P> + <S>
+	     \	 |   /alpha/		     <S> = <P> - <L>
+	      \  |  /     /		     <R> = 2<P> - <L>
+	       \ | /     /		     <P> = <N>(<N> . <L>)
+	_____________________		     <R> = 2<N>(<N> . <L>) - <L>
+					     
+
+			cos(alpha) = <R> . <V>
+				   = [ 2<N>(<N> . <L>) - <L> ] . <V>
+				   
+			I_specular = L*K_s*[ 2<N>(<N> . <L>) - <L> ] . <V> ]^e     
+			e is to model the quick degredation of the reflection
 
 
 
