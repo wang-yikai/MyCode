@@ -4270,8 +4270,32 @@ Specular Reflection (Cont.):
 			  (how strong the reflection to look/die off)
 			  Larger the exponent, the smaller the "dot"
 
+			(I_specular + I_diffuse) for each light
+			I: [0 - 255] (check if the dot product is negative ( >= 0 )
 
+Shading Model:
+	How often we calculate I
 
+	Flat: 
+	      Calculate I once per polygon
+
+	Goroud: Don't do a full I calculation (3x per polygon)
+		- New I for each pixel
+		- Calculate and store vertex normals 
+		  (average of the surface normals for all polygons that share a vertex)
+		  Ex:
+			V_0: [ P_0, P_1, P_2, ... , P_5 ]
+			V_1: [ P_5, P_4, P_6 ]
+
+		- Calculate I for each vertex normal, 
+		  generate new I values in scanline and draw_line the same way x and z values are generated.
+
+	Phong: Computationally intensive
+		- Calculate I for each pixel
+		- Store vertex normals
+		- generate new normals for each pixel in scanline and drawline, instead of I
+		- use each normal to calculate I
+  
 
 
 
