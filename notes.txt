@@ -4202,7 +4202,7 @@ Ambient:
 	A: ambient light color (0-255)
 	K_a: constant of ambient reflection (0-1)
 
-	I_ambient = A*K_a
+	I_ambient = A * K_a
 
 Diffuse reflection (matte):
 	L: point light source
@@ -4213,7 +4213,7 @@ Diffuse reflection (matte):
 
 	^<L>  	 ^<N>	   Reflection is brightest when theta is 0
 	 \       |	   I_diffuse = L * K_d * cos(theta)
-	  \      |	     	     = L*K_d * (<N> . <L>), <N> and <L> must be unit vectors
+	  \      |	     	     = L* K_d * (<N> . <L>), <N> and <L> must be unit vectors
 	   \theta|		     
 	    \	 |         <N> = < (nx)/||N||, (ny)/||N||, (nz)/||N|| > (||N|| = magnitude)
 	     \	 |	   ||N|| = sqrt( (nx)^2 + (ny)^2 + (nz)^2 )
@@ -4265,7 +4265,7 @@ Specular Reflection (Cont.):
 			cos(alpha) = <R> . <V>
 				   = [ 2<N>(<N> . <L>) - <L> ] . <V>
 				   
-			I_specular = L*K_s*[ 2<N>(<N> . <L>) - <L> ] . <V> ]^e     
+			I_specular = L* K_s * [ 2<N>(<N> . <L>) - <L> ] . <V> ]^e     
 			e is to model the quick degredation of the reflection 
 			  (how strong the reflection to look/die off)
 			  Larger the exponent, the smaller the "dot"
@@ -4296,6 +4296,41 @@ Shading Model:
 		- generate new normals for each pixel in scanline and drawline, instead of I
 		- use each normal to calculate I
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
