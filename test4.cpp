@@ -62,4 +62,8 @@ int main() {
 
     const int* const u = nullptr; //can't change reference
     // u = &w;
+
+    // Person Mary;
+    // vector<Person*> push_back(&Mary)
+    // push_back(new Person("Sally"))
 }
