@@ -23,6 +23,7 @@ public:
   Baker(const string& name) : name(name), theSize(0), theCapacity(0), treats(nullptr) {}
 
   Baker(const Baker& another) : name(another.name), theSize(another.theSize), theCapacity(another.theCapacity) {
+    cout << "Copy Constructor!" << endl;
     treats = new Treat*[theCapacity];
     for(size_t i = 0; i < theSize; ++i) {
       if (another.treats[i]) {
