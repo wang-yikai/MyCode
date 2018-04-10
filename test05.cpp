@@ -124,6 +124,7 @@ ostream& operator<<(ostream& os, const Baker& aBaker) {
   return os;
 }
 
+//can be a friend
 bool operator==(const Baker& lhs, const Baker& rhs) {
   return lhs.getSize() == rhs.getSize();
 }
