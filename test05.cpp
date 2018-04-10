@@ -24,11 +24,14 @@ public:
 
   Baker(const Baker& another) : name(another.name), theSize(another.theSize), theCapacity(another.theCapacity) {
     cout << "Copy Constructor!" << endl;
-    treats = new Treat*[theCapacity];
-    for(size_t i = 0; i < theSize; ++i) {
-      if (another.treats[i]) {
+    if (another.treats) {
+      treats = new Treat*[theCapacity];
+      for(size_t i = 0; i < theSize; ++i) {
         treats[i] = new Treat(*another.treats[i]);
       }
+    }
+    else {
+      treats = nullptr;
     }
   }
 
@@ -45,12 +48,15 @@ public:
       name = rhs.name;
       theSize = rhs.theSize;
       theCapacity = rhs.theCapacity;
-      treats = new Treat*[theCapacity];
 
-      for(size_t i = 0; i < theSize; ++i) {
-        if (rhs.treats[i]) {
+      if (rhs.treats) {
+        treats = new Treat*[theCapacity];
+        for(size_t i = 0; i < theSize; ++i) {
           treats[i] = new Treat(*rhs.treats[i]);
         }
+      }
+      else {
+        treats = nullptr;
       }
     }
 
