@@ -1,5 +1,5 @@
 G++ = g++ -std=c++11
-input = test03
+input = test05
 output = $(input).out
 
 compile:

@@ -34,13 +34,13 @@ public:
 
   Baker& operator=(const Baker& rhs) {
     if (this != &rhs) {
-      for(size_t i = 0; i < theSize; ++i ) {
-        if (treats[i]) {
-          delete treats[i];
+      if (treats) {
+        for(size_t i = 0; i < theSize; ++i ) {
+            delete treats[i];
         }
-      }
 
-      delete[] treats;
+        delete[] treats;
+      }
 
       name = rhs.name;
       theSize = rhs.theSize;
@@ -76,18 +76,25 @@ public:
   }
 
   Treat** delivers() {
-    Treat** deliveredTreats = new Treat*[theCapacity];
-    for(size_t i = 0; i < theSize; ++i) {
-      if (treats[i]) {
-        deliveredTreats[i] = new Treat(*treats[i]);
-        delete treats[i];
+    if (treats) {
+      Treat** deliveredTreats = new Treat*[theCapacity];
+      for(size_t i = 0; i < theSize; ++i) {
+        if (treats[i]) {
+          deliveredTreats[i] = new Treat(*treats[i]);
+          delete treats[i];
+        }
       }
+      delete[] treats;
+      theSize = 0;
+      theCapacity = 0;
+      treats = nullptr;
+      return deliveredTreats;
     }
-    delete[] treats;
-    theSize = 0;
-    theCapacity = 0;
-    treats = nullptr;
-    return deliveredTreats;
+    return nullptr;
+  }
+
+  size_t getSize() const {
+    return theSize;
   }
 
 };
@@ -111,6 +118,10 @@ ostream& operator<<(ostream& os, const Baker& aBaker) {
   return os;
 }
 
+bool operator==(const Baker& lhs, const Baker& rhs) {
+  return lhs.getSize() == rhs.getSize();
+}
+
 int main() {
   Baker fred("fred");
   cout << fred << endl;
@@ -129,8 +140,10 @@ int main() {
   cout << joe << endl;
   Baker bob = fred;
   cout << bob << endl;
+  cout << (bob == fred) << endl;
 
   fred.delivers();
   cout << fred << endl;
   cout << joe << endl;
+  cout << (joe == fred) << endl;
 }
