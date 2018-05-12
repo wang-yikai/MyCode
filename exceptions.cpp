@@ -5,6 +5,7 @@
 */
 
 //#define NDEBUG
+#include <cassert>
 
 #include <iostream>
 #include <vector>
@@ -21,6 +22,8 @@ struct OurException : public exception {
 };
 
 void bar(int n) {
+    assert(n <= 200);
+
     if (n > 200) {
         // What to do?
         throw 3;
