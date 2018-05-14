@@ -30,6 +30,7 @@ class Plane : public Flier {};
 class Student {
 public:
     virtual void display() const { cout << "Student\n"; }
+    virtual void display(int i) { cout << "Wut\n"; }
 };
 
 class Instructor {
@@ -39,11 +40,11 @@ public:
 
 class TA : public Student, public Instructor {
 public:
-    //using Student::display;
-    void display() const override {
-        Student::display();
-        Instructor::display();
-    }
+    using Student::display;
+    // void display() const  {
+    //     Student::display();
+    //     Instructor::display();
+    // }
 };
 
 ostream& operator<<(ostream& os, const Student& rhs) {
@@ -66,8 +67,8 @@ int main() {
     for (Flier* flier : vf) flier->fly();
 
     TA rohit;
-    cout << rohit << endl;
+    // cout << rohit << endl;
     //line below will not compile!
-     // rohit.display();  // ambiguous}
+     rohit.display(1);  // ambiguous
     // rohit.Student::display();  // ambiguous
 }
